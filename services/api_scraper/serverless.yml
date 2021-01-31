@@ -38,8 +38,7 @@ provider:
   stage: dev
   region: eu-central-1
   runtime: python3.8
-  lambdaHashingVersion: 20201221
-  
+  lambdaHashingVersion: 20201221  
 
   environment:
     s3ResponseBucketName: !ImportValue '${self:custom.sstApp}-s3ResponseBucketName'
@@ -64,5 +63,9 @@ functions:
   saveProductResponse:
     timeout: 60
     handler: bijenkorf/src/save_product_response.store_response
-
-
+  saveProductDetailResponse:
+    handler: bijenkorf/src/save_product_detail_response.store_response
+    events:
+      - s3:
+          bucket: !ImportValue '${self:custom.sstApp}-s3ResponseBucketName'
+          event: s3:PutObject:*
