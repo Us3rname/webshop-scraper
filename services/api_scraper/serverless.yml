@@ -13,8 +13,8 @@
 
 service: webshop-scraper
 # app and org for use with dashboard.serverless.com
-#app: your-app-name
-#org: your-org-name
+app: scraper-webshop
+org: patrickkompier
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
@@ -42,7 +42,8 @@ provider:
 
   environment:
     s3ResponseBucketName: !ImportValue '${self:custom.sstApp}-s3ResponseBucketName'
-    # webshopResponseBucketName: 'sjaakie'
+    bijenkorfSQSName: !ImportValue '${self:custom.sstApp}-BijenkorfSQSTopicName'
+    bijenkorfSQSArn: !ImportValue '${self:custom.sstApp}-BijenkorfSQSTopicArn'
 
   iamRoleStatements:
   - Effect: Allow
@@ -58,14 +59,24 @@ provider:
         - - !ImportValue '${self:custom.sstApp}-s3ResponseBucketARN'
           - "/*"
       # - !ImportValue '${self:custom.sstApp}-s3ResponseBucketARN'
+  - Effect: Allow
+    Action:
+      - sqs:*
+    # Restrict our IAM role permissions to
+    # the specific table for the stage
+    Resource:      
+      Fn::Join:
+        - ""
+        - - !ImportValue '${self:custom.sstApp}-BijenkorfSQSTopicArn'
 
 functions:
-  saveProductResponse:
+  storeBijenkorfProductResponse:
     timeout: 60
-    handler: bijenkorf/src/save_product_response.store_response
-  saveProductDetailResponse:
-    handler: bijenkorf/src/save_product_detail_response.store_response
+    handler: bijenkorf/src/store_product_response.store_response
     events:
-      - s3:
-          bucket: !ImportValue '${self:custom.sstApp}-s3ResponseBucketName'
-          event: s3:PutObject:*
+      - schedule: rate(1 day)
+  storeBijenkorfProductDetailResponse:
+    timeout: 60
+    handler: bijenkorf/src/store_product_detail_response.store_response
+    events:
+      - sqs: 'arn:aws:sqs:eu-central-1:390567366752:dev-webshop-scraper-infra-webscraper-BijenkorfQueue0CAC392F-ALBMVIY0WXN9'
