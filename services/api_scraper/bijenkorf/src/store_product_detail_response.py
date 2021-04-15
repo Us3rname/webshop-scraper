@@ -37,7 +37,7 @@ def store_response(event, context):
         s3object = s3.Object(
             os.environ['s3ResponseBucketName']
             # 'dev-webshop-scraper-infra-webshopresponsefb858fde-g7l88uy1c7m0'
-            , 'product_details/{}/response - {} - {} - {}.json'.format(folder_name,time.strftime("%Y%m%d-%H%M%S"), product['code'], product['currentVariantProduct']['code']))
+            , 'product_details/bijenkorf/{}/response - {} - {} - {}.json'.format(folder_name,time.strftime("%Y%m%d-%H%M%S"), product['code'], product['currentVariantProduct']['code']))
 
         s3object.put(
             Body=(bytes(json.dumps(response_json).encode('UTF-8')))

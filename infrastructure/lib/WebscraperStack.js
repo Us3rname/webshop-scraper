@@ -10,7 +10,18 @@ export default class WebscraperStack extends sst.Stack {
 
     const app = this.node.root;
 
-    this.bucket = new s3.Bucket(this, "WebshopResponse", {});
+    this.bucket = new s3.Bucket(this, "WebshopResponse", {
+      lifecycleRules: [
+        {
+            transitions: [
+                {
+                    storageClass: s3.StorageClass.INFREQUENT_ACCESS,
+                    transitionAfter: Duration.days(30),
+                },
+            ],
+        },
+    ],
+    });
 
     // Export values
     new CfnOutput(this, "ResponseBucketName", {
@@ -41,7 +52,8 @@ export default class WebscraperStack extends sst.Stack {
 
 
     const sqsBijenkorf = new sqs.Queue(this, 'Bijenkorf Queue', {
-      visibilityTimeout: Duration.seconds(60)
+      visibilityTimeout: Duration.seconds(60),
+      receiveMessageWaitTime: Duration.seconds(20)
     });
     // Output values
     new CfnOutput(this, "BijenkorfSQSTopicName", {

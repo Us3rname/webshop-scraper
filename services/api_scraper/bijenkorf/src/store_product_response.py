@@ -220,7 +220,7 @@ def store_response(event, context):
         if result['productListing']['navigation']['pagination']['nextPage'] is not None:
             next_page_query = result['productListing']['navigation']['pagination']['nextPage']['query']
 
-        fileLocation =  'products/{}/response - {} - {} - {}.json'.format(folder_name,time.strftime("%Y%m%d-%H%M%S"), start_index, start_index + len(products))
+        fileLocation =  'products/bijenkorf/{}/response - {} - {} - {}.json'.format(folder_name,time.strftime("%Y%m%d-%H%M%S"), start_index, start_index + len(products))
         s3object = s3.Object(os.environ['s3ResponseBucketName'], fileLocation)
 
         s3object.put(
