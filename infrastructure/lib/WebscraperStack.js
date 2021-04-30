@@ -16,8 +16,12 @@ export default class WebscraperStack extends sst.Stack {
             transitions: [
                 {
                     storageClass: s3.StorageClass.ONE_ZONE_INFREQUENT_ACCESS,
-                    transitionAfter: Duration.days(30),
+                    transitionAfter: Duration.days(1),
                 },
+                {
+                  storageClass: s3.StorageClass.DEEP_ARCHIVE,
+                  transitionAfter: Duration.days(3),
+              },
             ],
         },
     ],

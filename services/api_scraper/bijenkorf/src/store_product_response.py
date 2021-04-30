@@ -206,6 +206,21 @@ def store_response(event, context):
     next_page_query = None
     folder_name = time.strftime("%Y%m%d-%H%M%S")
 
+    categories = { 
+        
+        "herenschoenen" : {"catalog01_80", "catalog01_80_1040" }, 
+        "herenkleding" : {"catalog01_80", "catalog01_80_890" }, 
+        "herenaccessoires" : {"catalog01_80", "catalog01_80_980" }, 
+        "herenverzorging" : {"catalog01_80", "catalog01_80_800" }, 
+
+        "damesschoenen" : {"catalog01_60", "catalog01_60_640" }, 
+        "dameskleding" : {"catalog01_60", "catalog01_60_880" }, 
+        "damestassen" : {"catalog01_60", "catalog01_60_660" }, 
+        "damesaccessoires" : {"catalog01_60", "catalog01_60_1110" }, 
+        "damescosmetica" : {"catalog01_60", "catalog01_60_40" }, 
+    }
+    
+
     # Iterate at least one time (start_index == 0) and continue till there are no next pages left.
     while next_page_query is not None or start_index == 0:
         
