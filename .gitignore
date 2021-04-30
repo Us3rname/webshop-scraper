@@ -23,5 +23,4 @@ __pycache__/
 # Serverless directories
 .serverless
 
-/node_modules/
-/services/api_scraper/node_modules
+node_modules/
