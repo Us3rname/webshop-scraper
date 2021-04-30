@@ -11,7 +11,7 @@
 #
 # Happy Coding!
 
-service: webshop-scraper
+service: webshop-api-scraper
 # app and org for use with dashboard.serverless.com
 app: scraper-webshop
 org: patrickkompier
@@ -28,10 +28,24 @@ custom:
   stage: ${opt:stage, self:provider.stage}
   # Name of the SST app that's deploying our infrastructure
   sstApp: ${self:custom.stage}-webshop-scraper-infra
+  localstack:
+    stages:
+      # list of stages for which the plugin should be enabled
+      - dev
+    host: http://localhost  # optional - LocalStack host to connect to
+    edgePort: 4566  # optional - LocalStack edge port to connect to
+    autostart: true  # optional - Start LocalStack in Docker on Serverless deploy
+    lambda:
+      # Enable this flag to improve performance
+      mountCode: True
+    docker:
+      # Enable this flag to run "docker ..." commands as sudo
+      sudo: False
 
 plugins:
   - serverless-python-requirements
   - serverless-dotenv-plugin
+  - serverless-localstack
 
 provider:
   name: aws
@@ -41,9 +55,9 @@ provider:
   lambdaHashingVersion: 20201221  
 
   environment:
-    s3ResponseBucketName: !ImportValue '${self:custom.sstApp}-s3ResponseBucketName'
-    bijenkorfSQSName: !ImportValue '${self:custom.sstApp}-BijenkorfSQSTopicName'
-    bijenkorfSQSArn: !ImportValue '${self:custom.sstApp}-BijenkorfSQSTopicArn'
+    # s3ResponseBucketName: !ImportValue '${self:custom.sstApp}-s3ResponseBucketName'
+    # bijenkorfSQSName: !ImportValue '${self:custom.sstApp}-BijenkorfSQSTopicName'
+    # bijenkorfSQSArn: !ImportValue '${self:custom.sstApp}-BijenkorfSQSTopicArn'
 
   iamRoleStatements:
   - Effect: Allow
@@ -80,3 +94,7 @@ functions:
     handler: bijenkorf/src/store_product_detail_response.store_response
     events:
       - sqs: 'arn:aws:sqs:eu-central-1:390567366752:dev-webshop-scraper-infra-webscraper-BijenkorfQueue0CAC392F-ALBMVIY0WXN9'
+  createProduct:
+    handler: bijenkorf/src/create_product.hello
+  createQueue:
+    handler: bijenkorf/src/create_queue.store_response
