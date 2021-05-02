@@ -7,10 +7,9 @@ import os
 
 def store_response(event, context):
 
-    transport = AIOHTTPTransport(
-            url="https://www.debijenkorf.nl/api/graphql")
-
+    transport = AIOHTTPTransport(url="https://www.debijenkorf.nl/api/graphql")    
     client = Client(transport=transport, fetch_schema_from_transport=True)
+
     query = """
             query { productListing(query: %s, locale: "nl-NL") { 
             metaInformation {
@@ -204,13 +203,16 @@ def store_response(event, context):
     queue = sqs.get_queue_by_name(QueueName="dev-webshop-scraper-infra-webscra-SaveBijenkorfProductSpecificatio-13J4BX35A2HOM")
 
     next_page_query = None
+    items_per_query = 40
+
+    # This date will be used for the folder on the S3 bucket
     folder_name = event['dml_date']
 
     # Iterate at least one time (start_index == 0) and continue till there are no next pages left.
     while next_page_query is not None or start_index == 0:
         
         # Prepare & execute query
-        query_addition = "fh_location=//catalog01/nl_NL/categories<{{{}}}/categories<{{{}}}&fh_start_index={}&country=NL&chl=1&language=nl&fh_view_size={}".format(event['category_code'],event['sub_category_code'],start_index, 50)
+        query_addition = "fh_location=//catalog01/nl_NL/categories<{{{}}}/categories<{{{}}}&fh_start_index={}&country=NL&chl=1&language=nl&fh_view_size={}".format(event['category_code'],event['sub_category_code'],start_index, items_per_query)
         print(query_addition)
         
         qpl = gql(query % ('"' + query_addition + '"'))
@@ -222,7 +224,14 @@ def store_response(event, context):
         if result['productListing']['navigation']['pagination']['nextPage'] is not None:
             next_page_query = result['productListing']['navigation']['pagination']['nextPage']['query']
 
-        fileLocation =  'products/bijenkorf/{}/response - {} - {} - {} - {}.json'.format(folder_name, event['category'] ,time.strftime("%Y%m%d-%H%M%S"), start_index, start_index + len(products))
+        fileLocation =  'products/bijenkorf/{}/response - {} - {} - {} - {}.json'.format(
+            folder_name, 
+            event['category'],
+            time.strftime("%Y%m%d-%H%M%S"), 
+            start_index, 
+            start_index + len(products)
+        )
+
         s3object = s3.Object(os.environ['s3ResponseBucketName'], fileLocation)
 
         s3object.put(
@@ -240,7 +249,7 @@ def store_response(event, context):
             }
         })
 
-        start_index += 50
+        start_index += items_per_query
 
     response = {
         "statusCode": 200,
