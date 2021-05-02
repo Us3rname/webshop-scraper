@@ -13,11 +13,7 @@ export default class WebscraperStack extends sst.Stack {
     this.bucket = new s3.Bucket(this, "WebshopResponse", {
       lifecycleRules: [
         {
-            transitions: [
-                {
-                    storageClass: s3.StorageClass.ONE_ZONE_INFREQUENT_ACCESS,
-                    transitionAfter: Duration.days(1),
-                },
+            transitions: [        
                 {
                   storageClass: s3.StorageClass.DEEP_ARCHIVE,
                   transitionAfter: Duration.days(3),
@@ -54,21 +50,37 @@ export default class WebscraperStack extends sst.Stack {
       exportName: app.logicalPrefixedName("TableArn"),
     });
 
-
-    const sqsBijenkorf = new sqs.Queue(this, 'Bijenkorf Queue', {
+    const sqsBijenkorfProductSpecifications = new sqs.Queue(this, 'Save Bijenkorf Product Specifications Queue', {
       visibilityTimeout: Duration.seconds(60),
       receiveMessageWaitTime: Duration.seconds(20)
     });
+   
     // Output values
-    new CfnOutput(this, "BijenkorfSQSTopicName", {
-      value: sqsBijenkorf.queueName,
-      exportName: app.logicalPrefixedName("BijenkorfSQSTopicName"),
+    new CfnOutput(this, "BijenkorfProductSpecificationSQSTopicName", {
+      value: sqsBijenkorfProductSpecifications.queueName,
+      exportName: app.logicalPrefixedName("BijenkorfProductSpecificationSQSTopicName"),
     });
 
-    new CfnOutput(this, "BijenkorfSQSTopicArn", {
-      value: sqsBijenkorf.queueArn,
-      exportName: app.logicalPrefixedName("BijenkorfSQSTopicArn"),
+    new CfnOutput(this, "BijenkorfProductSpecificationSQSTopicArn", {
+      value: sqsBijenkorfProductSpecifications.queueArn,
+      exportName: app.logicalPrefixedName("BijenkorfProductSpecificationSQSTopicArn"),
     });
+
+    // const sqsBijenkorfProduct = new sqs.Queue(this, 'Save Bijenkorf Product Queue', {
+    //   visibilityTimeout: Duration.seconds(60),
+    //   receiveMessageWaitTime: Duration.seconds(20)
+    // });
+
+    // // Output values
+    // new CfnOutput(this, "BijenkorfProductSQSTopicName", {
+    //   value: sqsBijenkorfProduct.queueName,
+    //   exportName: app.logicalPrefixedName("BijenkorfProductSQSTopicName"),
+    // });
+
+    // new CfnOutput(this, "BijenkorfProductSQSTopicArn", {
+    //   value: sqsBijenkorfProduct.queueArn,
+    //   exportName: app.logicalPrefixedName("BijenkorfProductSQSTopicArn"),
+    // });
   
   }
 }

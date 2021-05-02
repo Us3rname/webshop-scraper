@@ -201,31 +201,18 @@ def store_response(event, context):
     s3 = boto3.resource('s3')
     sqs = boto3.resource('sqs')
 
-    queue = sqs.get_queue_by_name(QueueName="dev-webshop-scraper-infra-webscraper-BijenkorfQueue0CAC392F-ALBMVIY0WXN9")
+    queue = sqs.get_queue_by_name(QueueName="dev-webshop-scraper-infra-webscra-SaveBijenkorfProductSpecificatio-13J4BX35A2HOM")
 
     next_page_query = None
-    folder_name = time.strftime("%Y%m%d-%H%M%S")
-
-    categories = { 
-        
-        "herenschoenen" : {"catalog01_80", "catalog01_80_1040" }, 
-        "herenkleding" : {"catalog01_80", "catalog01_80_890" }, 
-        "herenaccessoires" : {"catalog01_80", "catalog01_80_980" }, 
-        "herenverzorging" : {"catalog01_80", "catalog01_80_800" }, 
-
-        "damesschoenen" : {"catalog01_60", "catalog01_60_640" }, 
-        "dameskleding" : {"catalog01_60", "catalog01_60_880" }, 
-        "damestassen" : {"catalog01_60", "catalog01_60_660" }, 
-        "damesaccessoires" : {"catalog01_60", "catalog01_60_1110" }, 
-        "damescosmetica" : {"catalog01_60", "catalog01_60_40" }, 
-    }
-    
+    folder_name = event['dml_date']
 
     # Iterate at least one time (start_index == 0) and continue till there are no next pages left.
     while next_page_query is not None or start_index == 0:
         
         # Prepare & execute query
-        query_addition = "fh_location=//catalog01/nl_NL/categories<{catalog01_80}/categories<{catalog01_80_1040}" + "&fh_start_index={}&country=NL&chl=1&language=nl&fh_view_size={}".format(start_index, 50)
+        query_addition = "fh_location=//catalog01/nl_NL/categories<{{{}}}/categories<{{{}}}&fh_start_index={}&country=NL&chl=1&language=nl&fh_view_size={}".format(event['category_code'],event['sub_category_code'],start_index, 50)
+        print(query_addition)
+        
         qpl = gql(query % ('"' + query_addition + '"'))
         result = client.execute(qpl)
         
@@ -235,7 +222,7 @@ def store_response(event, context):
         if result['productListing']['navigation']['pagination']['nextPage'] is not None:
             next_page_query = result['productListing']['navigation']['pagination']['nextPage']['query']
 
-        fileLocation =  'products/bijenkorf/{}/response - {} - {} - {}.json'.format(folder_name,time.strftime("%Y%m%d-%H%M%S"), start_index, start_index + len(products))
+        fileLocation =  'products/bijenkorf/{}/response - {} - {} - {} - {}.json'.format(folder_name, event['category'] ,time.strftime("%Y%m%d-%H%M%S"), start_index, start_index + len(products))
         s3object = s3.Object(os.environ['s3ResponseBucketName'], fileLocation)
 
         s3object.put(

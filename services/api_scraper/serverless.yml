@@ -1,16 +1,3 @@
-# Welcome to Serverless!
-#
-# This file is the main config file for your service.
-# It's very minimal at this point and uses default values.
-# You can always add more config options for more control.
-# We've included some commented out config examples here.
-# Just uncomment any of them to get that config option.
-#
-# For full config options, check the docs:
-#    docs.serverless.com
-#
-# Happy Coding!
-
 service: webshop-api-scraper
 # app and org for use with dashboard.serverless.com
 app: scraper-webshop
@@ -28,24 +15,24 @@ custom:
   stage: ${opt:stage, self:provider.stage}
   # Name of the SST app that's deploying our infrastructure
   sstApp: ${self:custom.stage}-webshop-scraper-infra
-  localstack:
-    stages:
-      # list of stages for which the plugin should be enabled
-      - dev
-    host: http://localhost  # optional - LocalStack host to connect to
-    edgePort: 4566  # optional - LocalStack edge port to connect to
-    autostart: true  # optional - Start LocalStack in Docker on Serverless deploy
-    lambda:
-      # Enable this flag to improve performance
-      mountCode: True
-    docker:
-      # Enable this flag to run "docker ..." commands as sudo
-      sudo: False
+  # localstack:
+  #   stages:
+  #     # list of stages for which the plugin should be enabled
+  #     - dev
+  #   host: http://localhost  # optional - LocalStack host to connect to
+  #   edgePort: 4566  # optional - LocalStack edge port to connect to
+  #   autostart: true  # optional - Start LocalStack in Docker on Serverless deploy
+  #   lambda:
+  #     # Enable this flag to improve performance
+  #     mountCode: True
+  #   docker:
+  #     # Enable this flag to run "docker ..." commands as sudo
+  #     sudo: False
 
 plugins:
   - serverless-python-requirements
   - serverless-dotenv-plugin
-  - serverless-localstack
+  # - serverless-localstack
 
 provider:
   name: aws
@@ -55,9 +42,9 @@ provider:
   lambdaHashingVersion: 20201221  
 
   environment:
-    # s3ResponseBucketName: !ImportValue '${self:custom.sstApp}-s3ResponseBucketName'
-    # bijenkorfSQSName: !ImportValue '${self:custom.sstApp}-BijenkorfSQSTopicName'
-    # bijenkorfSQSArn: !ImportValue '${self:custom.sstApp}-BijenkorfSQSTopicArn'
+    s3ResponseBucketName: !ImportValue '${self:custom.sstApp}-s3ResponseBucketName'
+    # bijenkorfSQSName: !ImportValue '${self:custom.sstApp}-BijenkorfProductSpecificationSQSTopicName'
+    # bijenkorfSQSArn: !ImportValue '${self:custom.sstApp}-BijenkorfProductSpecificationSQSTopicArn'
 
   iamRoleStatements:
   - Effect: Allow
@@ -72,28 +59,33 @@ provider:
         - ""
         - - !ImportValue '${self:custom.sstApp}-s3ResponseBucketARN'
           - "/*"
-      # - !ImportValue '${self:custom.sstApp}-s3ResponseBucketARN'
   - Effect: Allow
     Action:
-      - sqs:*
-    # Restrict our IAM role permissions to
-    # the specific table for the stage
+      - sqs:* 
     Resource:      
       Fn::Join:
         - ""
-        - - !ImportValue '${self:custom.sstApp}-BijenkorfSQSTopicArn'
+        - - !ImportValue '${self:custom.sstApp}-BijenkorfProductSpecificationSQSTopicArn'
+  - Effect: Allow
+    Action:
+      - lambda:InvokeFunction
+      - lambda:InvokeAsync
+    Resource: "*"
 
 functions:
-  storeBijenkorfProductResponse:
+  storeBijenkorfProductCatalog:
     timeout: 60
-    handler: bijenkorf/src/store_product_response.store_response
+    handler: bijenkorf/src/store_product_catalog.store_response
     events:
       - schedule: rate(1 day)
+  storeBijenkorfProductResponse:
+    timeout: 60
+    handler: bijenkorf/src/store_product_response.store_response    
   storeBijenkorfProductDetailResponse:
     timeout: 60
     handler: bijenkorf/src/store_product_detail_response.store_response
     events:
-      - sqs: 'arn:aws:sqs:eu-central-1:390567366752:dev-webshop-scraper-infra-webscraper-BijenkorfQueue0CAC392F-ALBMVIY0WXN9'
+      - sqs: 'arn:aws:sqs:eu-central-1:390567366752:dev-webshop-scraper-infra-webscra-SaveBijenkorfProductSpecificatio-13J4BX35A2HOM'
   createProduct:
     handler: bijenkorf/src/create_product.hello
   createQueue:
