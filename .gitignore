@@ -25,3 +25,5 @@ __pycache__/
 
 __pycache__
 node_modules
+serverless_sdk
+services/api_scraper/s_createProduct.py

@@ -8,8 +8,8 @@ org: patrickkompier
 frameworkVersion: '2'
 
 custom:
-  # pythonRequirements:
-  #   dockerizePip: non-linux
+  pythonRequirements:
+    dockerizePip: non-linux
   # Our stage is based on what is passed in when running serverless
   # commands. Or falls back to what we have set in the provider section.
   stage: ${opt:stage, self:provider.stage}
@@ -43,8 +43,8 @@ provider:
 
   environment:
     s3ResponseBucketName: !ImportValue '${self:custom.sstApp}-s3ResponseBucketName'
-    # bijenkorfSQSName: !ImportValue '${self:custom.sstApp}-BijenkorfProductSpecificationSQSTopicName'
-    # bijenkorfSQSArn: !ImportValue '${self:custom.sstApp}-BijenkorfProductSpecificationSQSTopicArn'
+    BijenkorfProductSpecificationSQSTopicName: !ImportValue '${self:custom.sstApp}-BijenkorfProductSpecificationSQSTopicName'
+    bijenkorfSQSArn: !ImportValue '${self:custom.sstApp}-BijenkorfProductSpecificationSQSTopicArn'
 
   iamRoleStatements:
   - Effect: Allow

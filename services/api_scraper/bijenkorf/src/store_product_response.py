@@ -4,6 +4,9 @@ import json
 import time
 import boto3    
 import os
+import io
+import gzip
+from s3_service import S3Service
 
 def store_response(event, context):
 
@@ -197,12 +200,16 @@ def store_response(event, context):
         """
 
     start_index = 0
-    s3 = boto3.resource('s3')
+    s3 = boto3.client('s3')
     sqs = boto3.resource('sqs')
 
-    queue = sqs.get_queue_by_name(QueueName="dev-webshop-scraper-infra-webscra-SaveBijenkorfProductSpecificatio-13J4BX35A2HOM")
+    s3Service = S3Service()
+
+    queue = sqs.get_queue_by_name(QueueName=os.environ['BijenkorfProductSpecificationSQSTopicName'])
 
     next_page_query = None
+
+    # Likelyhood of that 40 items will be loaded within the 60 sec cap of the lambda function.
     items_per_query = 40
 
     # This date will be used for the folder on the S3 bucket
@@ -220,11 +227,13 @@ def store_response(event, context):
         
         # Get all the products
         products = result['productListing']['navigation']['products']
+
+        # Determine if there is a next page (more items)
         next_page_query = None
         if result['productListing']['navigation']['pagination']['nextPage'] is not None:
             next_page_query = result['productListing']['navigation']['pagination']['nextPage']['query']
 
-        fileLocation =  'products/bijenkorf/{}/response - {} - {} - {} - {}.json'.format(
+        fileLocation =  'products/bijenkorf/{}/response - {} - {} - {} - {}.json.gz'.format(
             folder_name, 
             event['category'],
             time.strftime("%Y%m%d-%H%M%S"), 
@@ -232,11 +241,7 @@ def store_response(event, context):
             start_index + len(products)
         )
 
-        s3object = s3.Object(os.environ['s3ResponseBucketName'], fileLocation)
-
-        s3object.put(
-            Body=(bytes(json.dumps(result).encode('UTF-8')))
-        )
+        s3Service.upload_json_gz(s3, os.environ['s3ResponseBucketName'], fileLocation, result)
 
         response = queue.send_message(MessageBody="Producten {} t/m {}".format(start_index, start_index + len(products)), MessageAttributes = {
             'ProductS3Location': {
