@@ -11,9 +11,6 @@ def store_response(event, context):
     lambdaClient = boto3.client('lambda')
 
     print(event)
-    start_index = 0
-    next_page_query = None
-    folder_name = time.strftime("%Y%m%d-%H%M%S")
 
     categories = {
 
@@ -40,11 +37,11 @@ def store_response(event, context):
             "sub_category_code" : categories[category]['sub_category_code']
         }
 
-        lambdaClient.invoke(
-            FunctionName="arn:aws:lambda:eu-central-1:390567366752:function:webshop-api-scraper-dev-storeBijenkorfProductResponse",
-            InvocationType="Event",
-            Payload=json.dumps(payload),
-        )
+        # lambdaClient.invoke(
+        #     FunctionName="arn:aws:lambda:eu-central-1:390567366752:function:webshop-api-scraper-dev-storeBijenkorfProductResponse",
+        #     InvocationType="Event",
+        #     Payload=json.dumps(payload),
+        # )
 
     response = {
         "statusCode": 200,

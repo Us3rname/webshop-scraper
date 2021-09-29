@@ -6,7 +6,7 @@ import boto3
 import os
 import io
 import gzip
-from s3_service import S3Service
+from ...aws_wrapper import S3Service
 
 def store_response(event, context):
 

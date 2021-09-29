@@ -2,5 +2,5 @@
   "name": "webshop-scraper-infra",
   "type": "@serverless-stack/resources",
   "stage": "dev",
-  "region": "eu-central-1"
+  "region": "eu-west-1"
 }

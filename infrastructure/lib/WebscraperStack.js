@@ -11,16 +11,6 @@ export default class WebscraperStack extends sst.Stack {
     const app = this.node.root;
 
     this.bucket = new s3.Bucket(this, "WebshopResponse", {
-      lifecycleRules: [
-        {
-            transitions: [        
-                {
-                  storageClass: s3.StorageClass.DEEP_ARCHIVE,
-                  transitionAfter: Duration.days(3),
-              },
-            ],
-        },
-    ],
     });
 
     // Export values
@@ -66,21 +56,21 @@ export default class WebscraperStack extends sst.Stack {
       exportName: app.logicalPrefixedName("BijenkorfProductSpecificationSQSTopicArn"),
     });
 
-    // const sqsBijenkorfProduct = new sqs.Queue(this, 'Save Bijenkorf Product Queue', {
-    //   visibilityTimeout: Duration.seconds(60),
-    //   receiveMessageWaitTime: Duration.seconds(20)
-    // });
+    const sqsZalandoProductSpecification = new sqs.Queue(this, 'Save Zalando Product specifications Queue', {
+      visibilityTimeout: Duration.seconds(60),
+      receiveMessageWaitTime: Duration.seconds(20)
+    });
+   
+    // Output values
+    new CfnOutput(this, "ZalandoProductSpecificationsSQSTopicName", {
+      value: sqsZalandoProductSpecification.queueName,
+      exportName: app.logicalPrefixedName("ZalandoProductSpecificationsSQSTopicName"),
+    });
 
-    // // Output values
-    // new CfnOutput(this, "BijenkorfProductSQSTopicName", {
-    //   value: sqsBijenkorfProduct.queueName,
-    //   exportName: app.logicalPrefixedName("BijenkorfProductSQSTopicName"),
-    // });
-
-    // new CfnOutput(this, "BijenkorfProductSQSTopicArn", {
-    //   value: sqsBijenkorfProduct.queueArn,
-    //   exportName: app.logicalPrefixedName("BijenkorfProductSQSTopicArn"),
-    // });
+    new CfnOutput(this, "ZalandoProductSpecificationsSQSTopicArn", {
+      value: sqsZalandoProductSpecification.queueArn,
+      exportName: app.logicalPrefixedName("ZalandoProductSpecificationsSQSTopicArn"),
+    });
   
   }
 }

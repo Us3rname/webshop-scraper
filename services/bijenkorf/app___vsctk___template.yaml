@@ -1,0 +1,10 @@
+Resources:
+  bijenkorf:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/save_product_response.store_response
+      CodeUri: >-
+        C:/Users/kompier/Documents/Personal/Programming/webshop-scraper/services/bijenkorf
+      Runtime: python3.7
+      Environment:
+        Variables: {}

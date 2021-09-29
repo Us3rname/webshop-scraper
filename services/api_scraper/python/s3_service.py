@@ -5,7 +5,7 @@ import logging
 
 class S3Service:
 
-    def upload_json_gz(self, s3client, bucket, key, obj, default=None, encoding='utf-8'):
+    def upload_json_gz(self, s3client, bucket, key, obj, default=None, encoding='utf-8', storage_class='ONEZONE_IA'):
 
         ''' upload python dict into s3 bucket with gzip archive '''
         inmem = io.BytesIO()
@@ -14,7 +14,7 @@ class S3Service:
                 wrapper.write(json.dumps(
                     obj, ensure_ascii=False, default=default))
         inmem.seek(0)
-        s3client.put_object(Bucket=bucket, Body=inmem, Key=key)
+        s3client.put_object(Bucket=bucket, Body=inmem, Key=key, StorageClass=storage_class)
 
     def download_json_gz(self, s3client, bucket, key):
         ''' download gzipped json file from s3 and convert to dict '''

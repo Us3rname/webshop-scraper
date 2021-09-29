@@ -32,12 +32,11 @@ custom:
 plugins:
   - serverless-python-requirements
   - serverless-dotenv-plugin
-  # - serverless-localstack
 
 provider:
   name: aws
   stage: dev
-  region: eu-central-1
+  region: eu-west-1
   runtime: python3.8
   lambdaHashingVersion: 20201221  
 
@@ -72,6 +71,13 @@ provider:
       - lambda:InvokeAsync
     Resource: "*"
 
+layers:
+  awsWrapper:
+    path: python
+    description: Wrapper on the AWS services
+    compatibleRuntimes: # optional, a list of runtimes this layer is compatible with
+      - python3.8
+
 functions:
   storeBijenkorfProductCatalog:
     timeout: 60
@@ -85,7 +91,17 @@ functions:
     timeout: 60
     handler: bijenkorf/src/store_product_detail_response.store_response
     events:
-      - sqs: 'arn:aws:sqs:eu-central-1:390567366752:dev-webshop-scraper-infra-webscra-SaveBijenkorfProductSpecificatio-13J4BX35A2HOM'
+      - sqs: 'arn:aws:sqs:eu-west-1:390567366752:dev-webshop-scraper-infra-webscra-SaveBijenkorfProductSpecificatio-1WJD9FWJF38RH'
+  storeZalandoProductCatalog:
+    timeout: 60
+    handler: zalando/src/store_product_catalog.store_response
+    events:
+      - schedule: rate(1 day)
+  storeZalandoProductResponse:
+    timeout: 60
+    handler: zalando/src/store_product_response.store_response
+    layers:
+        - {Ref: AwsWrapperLambdaLayer}   
   createProduct:
     handler: bijenkorf/src/create_product.hello
   createQueue:
