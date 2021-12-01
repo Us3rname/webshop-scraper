@@ -39,7 +39,7 @@ export class LambdaStack extends cdk.Stack {
       {
         runtime: lambda.Runtime.PYTHON_3_9,
         handler: "jumbo_process_products.handler",
-        code: lambda.Code.fromAsset(path.join(__dirname, "./src")),
+        code: lambda.Code.fromAsset(path.join(__dirname, "./src/jumbo")),
         layers: [webshopLayer],
         timeout: Duration.minutes(1),
         environment: {
