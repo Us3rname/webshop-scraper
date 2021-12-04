@@ -4,7 +4,7 @@ import asyncio
 import aiohttp
 import os
 from s3_service import S3Service
-from jumbo_product_processor import JumboProductProcessor
+from process_products import ProcessProducts
 import time
 from datetime import datetime
 
@@ -18,7 +18,7 @@ async def main():
 
     bucket_name = os.environ['bucket_name']
 
-    jumboProcessProducts = JumboProductProcessor()
+    jumboProcessProducts = ProcessProducts()
 
     async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(limit=10)) as session:
         numberOfProducts = await jumboProcessProducts.get_total_amount_of_products(session)    
@@ -30,9 +30,9 @@ async def main():
         coroutines = []
         offset = 0
 
-        while offset <= (numberOfProducts / JumboProductProcessor.items_per_query):
+        while offset <= (numberOfProducts / ProcessProducts.items_per_query):
             coroutines.append(jumboProcessProducts.get_products(session, offset))
-            offset += JumboProductProcessor.items_per_query
+            offset += ProcessProducts.items_per_query
 
         results = await asyncio.gather(*coroutines, return_exceptions=True)
 

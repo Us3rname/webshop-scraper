@@ -1,6 +1,6 @@
 from api_service import ApiService
 
-class JumboProductProcessor:
+class ProcessProducts:
     url = "https://mobileapi.jumbo.com/v16/search"
     headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:81.0) Gecko/20100101 Firefox/81.0',
                     'charset' : 'utf-8'}

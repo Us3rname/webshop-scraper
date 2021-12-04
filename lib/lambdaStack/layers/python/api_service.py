@@ -9,6 +9,6 @@ class ApiService:
         async with session.get(url, headers=headers, params=params) as response:
             return await response.json()
 
-    async def fetch_text(self, session, url):
-        async with session.get(url, ) as response:
+    async def fetch_text(self, session, url, headers, params):
+        async with session.get(url, headers=headers, params=params ) as response:
             return await response.text()

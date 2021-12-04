@@ -1,7 +1,7 @@
 from api_service import ApiService
 import json 
 
-class AHProductProcessor:
+class ProcessProducts:
     url = "https://www.ah.nl/zoeken/api/products/search"
     headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:81.0) Gecko/20100101 Firefox/81.0','charset' : 'utf-8'}
     items_per_query = 50

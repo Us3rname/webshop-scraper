@@ -19,6 +19,8 @@ export interface lambdaStackProps extends cdk.StackProps {
 export class LambdaStack extends cdk.Stack {
   public readonly jumboScraperLambda: IFunction;
   public readonly ahScraperLambda: IFunction;
+  public readonly dirkScraperLambda: IFunction;
+  public readonly coopScraperLambda: IFunction;
 
   constructor(scope: cdk.Construct, id: string, props: lambdaStackProps) {
     super(scope, id, props);
@@ -39,7 +41,7 @@ export class LambdaStack extends cdk.Stack {
       "Jumbo mobile webshop scraper",
       {
         runtime: lambda.Runtime.PYTHON_3_9,
-        handler: "jumbo_process_products.handler",
+        handler: "main.handler",
         code: lambda.Code.fromAsset(path.join(__dirname, "./src/jumbo")),
         layers: [webshopLayer],
         timeout: Duration.minutes(1),
@@ -55,7 +57,7 @@ export class LambdaStack extends cdk.Stack {
       "AH mobile webshop scraper",
       {
         runtime: lambda.Runtime.PYTHON_3_9,
-        handler: "ah_process_products.handler",
+        handler: "main.handler",
         code: lambda.Code.fromAsset(path.join(__dirname, "./src/ah")),
         layers: [webshopLayer],
         timeout: Duration.minutes(2),
@@ -67,12 +69,40 @@ export class LambdaStack extends cdk.Stack {
       }
     );
 
+    this.dirkScraperLambda = new lambda.Function(this, "Dirk webshop scraper", {
+      runtime: lambda.Runtime.PYTHON_3_9,
+      handler: "main.handler",
+      code: lambda.Code.fromAsset(path.join(__dirname, "./src/dirk")),
+      layers: [webshopLayer],
+      timeout: Duration.minutes(1),
+      memorySize: 1024,
+      environment: {
+        bucket_name: props.landingZoneBucket.bucketName,
+      },
+      role: lambdaRole,
+    });
+
+    this.coopScraperLambda = new lambda.Function(this, "Coop webshop scraper", {
+      runtime: lambda.Runtime.PYTHON_3_9,
+      handler: "main.handler",
+      code: lambda.Code.fromAsset(path.join(__dirname, "./src/coop")),
+      layers: [webshopLayer],
+      timeout: Duration.minutes(2),
+      memorySize: 512,
+      environment: {
+        bucket_name: props.landingZoneBucket.bucketName,
+      },
+      role: lambdaRole,
+    });
+
     const eventRule = new events.Rule(this, "scheduleSuperMarketScrapers", {
       schedule: events.Schedule.rate(Duration.days(1)),
     });
 
     eventRule.addTarget(new targets.LambdaFunction(this.jumboScraperLambda));
     eventRule.addTarget(new targets.LambdaFunction(this.ahScraperLambda));
+    eventRule.addTarget(new targets.LambdaFunction(this.dirkScraperLambda));
+    eventRule.addTarget(new targets.LambdaFunction(this.coopScraperLambda));
   }
 
   _createLambdaRole(lambdaStackProps: lambdaStackProps) {
