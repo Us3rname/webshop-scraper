@@ -18,6 +18,7 @@ export interface lambdaStackProps extends cdk.StackProps {
 
 export class LambdaStack extends cdk.Stack {
   public readonly jumboScraperLambda: IFunction;
+  public readonly ahScraperLambda: IFunction;
 
   constructor(scope: cdk.Construct, id: string, props: lambdaStackProps) {
     super(scope, id, props);
@@ -49,10 +50,29 @@ export class LambdaStack extends cdk.Stack {
       }
     );
 
+    this.ahScraperLambda = new lambda.Function(
+      this,
+      "AH mobile webshop scraper",
+      {
+        runtime: lambda.Runtime.PYTHON_3_9,
+        handler: "ah_process_products.handler",
+        code: lambda.Code.fromAsset(path.join(__dirname, "./src/ah")),
+        layers: [webshopLayer],
+        timeout: Duration.minutes(2),
+        memorySize: 1024,
+        environment: {
+          bucket_name: props.landingZoneBucket.bucketName,
+        },
+        role: lambdaRole,
+      }
+    );
+
     const eventRule = new events.Rule(this, "scheduleSuperMarketScrapers", {
       schedule: events.Schedule.rate(Duration.days(1)),
     });
+
     eventRule.addTarget(new targets.LambdaFunction(this.jumboScraperLambda));
+    eventRule.addTarget(new targets.LambdaFunction(this.ahScraperLambda));
   }
 
   _createLambdaRole(lambdaStackProps: lambdaStackProps) {
