@@ -25,10 +25,10 @@ export class MyPipelineStack extends cdk.Stack {
       }),
     });
 
-    // pipeline.addStage(
-    //   new DevPipelineStage(this, "development", {
-    //     ...props,
-    //   })
-    // );
+    pipeline.addStage(
+      new DevPipelineStage(this, "development", {
+        ...props,
+      })
+    );
   }
 }

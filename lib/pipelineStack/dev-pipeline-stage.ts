@@ -26,14 +26,14 @@ export class DevPipelineStage extends cdk.Stage {
       }
     );
 
-    // new LambdaStack(this, environment + "-" + application + "-LambdaStack", {
-    //   env,
-    //   landingZoneBucket: lakehouseStack.landingzoneBucket,
-    //   jumboScraper: {
-    //     roleDescription:
-    //       "Role that is being used for scraping the jumbo website",
-    //     roleName: environment + "-" + application + "-" + "LambdaRoleJumbo",
-    //   },
-    // });
+    new LambdaStack(this, environment + "-" + application + "-LambdaStack", {
+      env,
+      landingZoneBucket: lakehouseStack.landingzoneBucket,
+      jumboScraper: {
+        roleDescription:
+          "Role that is being used for scraping the jumbo website",
+        roleName: environment + "-" + application + "-" + "LambdaRoleJumbo",
+      },
+    });
   }
 }
