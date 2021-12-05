@@ -31,7 +31,7 @@
     "@aws-cdk/core:newStyleStackSynthesis": true,
 
     "default": {
-      "application": "webshopScraper",
+      "application": "webshop-scraper",
       "env": {
         "account": "390567366752",
         "region": "eu-west-1"
