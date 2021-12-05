@@ -1,33 +1,26 @@
 #!/usr/bin/env node
 import "source-map-support/register";
 import * as cdk from "@aws-cdk/core";
-import { LambdaStack } from "../lib/lambdaStack/lambda-stack";
-import { LakehouseStack } from "../lib/lakehouseStack/lakehouse-stack";
+import { MyPipelineStack } from "../lib/pipelineStack/my-pipeline-stack";
 
 const app = new cdk.App();
-const env: cdk.Environment = app.node.tryGetContext("default").env;
-const application = app.node.tryGetContext("default").application;
-const environment = "develop";
 
-const lakehouseStack = new LakehouseStack(
-  app,
-  environment + "-" + application + "-LakehouseStack",
-  {
-    env,
-    landingZoneBucketName:
-      environment +
-      "-" +
-      application +
-      "-" +
-      app.node.tryGetContext(environment).landingZoneBucketName,
+interface EnvProps extends cdk.StackProps {
+  env: cdk.Environment;
+}
+
+class MyService extends cdk.Construct {
+  constructor(scope: cdk.Construct, id: string, props: EnvProps) {
+    super(scope, id);
+
+    const pipeline = new MyPipelineStack(
+      this,
+      this.node.tryGetContext("default").application + "PipelineStack",
+      props
+    );
   }
-);
+}
 
-new LambdaStack(app, environment + "-" + application + "-LambdaStack", {
-  env,
-  landingZoneBucket: lakehouseStack.landingzoneBucket,
-  jumboScraper: {
-    roleDescription: "Role that is being used for scraping the jumbo website",
-    roleName: environment + "-" + application + "-" + "LambdaRoleJumbo",
-  },
-});
+const env: cdk.Environment = app.node.tryGetContext("default").env;
+const props: EnvProps = { env };
+new MyService(app, "develop", props);
