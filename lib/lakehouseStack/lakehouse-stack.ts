@@ -13,7 +13,19 @@ export class LakehouseStack extends cdk.Stack {
 
     const landingzoneBucket = new s3.Bucket(this, props.landingZoneBucketName, {
       bucketName: props.landingZoneBucketName,
-      versioned: true, // a Bucket used as a source in CodePipeline must be versioned
+      versioned: true,
+      lifecycleRules: [
+        {
+          abortIncompleteMultipartUploadAfter: cdk.Duration.days(90),
+          expiration: cdk.Duration.days(365),
+          transitions: [
+            {
+              storageClass: s3.StorageClass.INTELLIGENT_TIERING,
+              transitionAfter: cdk.Duration.days(30),
+            },
+          ],
+        },
+      ],
     });
 
     this.landingzoneBucket = landingzoneBucket;
