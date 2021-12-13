@@ -1,0 +1,1963 @@
+[
+  {
+    "products": {
+      "data": [
+        {
+          "id": "302238STK",
+          "title": "Jumbo Komkommer",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 85
+            },
+            "unitPrice": {
+              "unit": "piece",
+              "price": {
+                "currency": "EUR",
+                "amount": 85
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [],
+          "nixProduct": false,
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/090920202358_302238STK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/alp.png?test"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/alp.png?test"
+          },
+          "stickerBadges": [],
+          "sample": false
+        },
+        {
+          "id": "425054STK",
+          "title": "Jumbo Bananen Tros ca. 750g",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 99
+            },
+            "unitPrice": {
+              "unit": "piece",
+              "price": {
+                "currency": "EUR",
+                "amount": 99
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [],
+          "nixProduct": false,
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/290420210738_425054STK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {},
+          "stickerBadges": [],
+          "sample": false
+        },
+        {
+          "id": "456992STK",
+          "title": "Jumbo Aardappelgratin Truffel Smaak 700g",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 549
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 784
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "295224BAK",
+            "458280DS",
+            "388978KGR",
+            "457087CUP",
+            "461418STK"
+          ],
+          "nixProduct": false,
+          "quantity": "700 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/301120211342_456992STK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {},
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/kerst.png",
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/tht-7+.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "456617STK",
+          "title": "Jumbo Mini Pizza Zalm met Rode Ui en Dille 146g",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 350
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 2381
+              }
+            }
+          },
+          "available": false,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "457087CUP",
+            "458280DS",
+            "461418STK",
+            "456618STK",
+            "456615STK"
+          ],
+          "nixProduct": false,
+          "quantity": "146 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/281120211923_456617STK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "unavailabilityReason": "UNAVAILABLE",
+          "reason": "ON_HOLD",
+          "promotion": {
+            "id": "2778001-B-1",
+            "name": "Kies & Mix borrelhapjes",
+            "label": "Kies & Mix borrelhapjes",
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2021/Seizoen/SA12/Kerst%20borrel.png",
+            "fromDate": 1638140460000,
+            "toDate": 1642201140000,
+            "validityPeriod": "Geldig vanaf ma 29 nov. t/m vr 14 jan. 2022",
+            "summary": "Diverse soorten",
+            "offline": false,
+            "tags": [
+              {
+                "type": "tag",
+                "text": "2e halve prijs"
+              }
+            ],
+            "badgeImage": {
+              "main": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            },
+            "stickerBadges": [],
+            "enablePromoAssistance": true
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+          },
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/kerst.png",
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/tht-7+.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "457065STK",
+          "title": "Jumbo Aardappelgratin Sinaasappel Venkel 700g",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 549
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 784
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "295224BAK",
+            "458280DS",
+            "388978KGR",
+            "457088CUP",
+            "461418STK"
+          ],
+          "nixProduct": false,
+          "quantity": "700 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/301120211345_457065STK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {},
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/tht-7+.png",
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/kerst.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "456611DS",
+          "title": "Jumbo Mini Taartje Witlof Ham met Kaas 270g",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 399
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 1478
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "457088CUP",
+            "458280DS",
+            "461418STK",
+            "456613DS",
+            "456646DS"
+          ],
+          "nixProduct": false,
+          "quantity": "270 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/291120211252_456611DS-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "promotion": {
+            "id": "2778001-B-1",
+            "name": "Kies & Mix borrelhapjes",
+            "label": "Kies & Mix borrelhapjes",
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2021/Seizoen/SA12/Kerst%20borrel.png",
+            "fromDate": 1638140460000,
+            "toDate": 1642201140000,
+            "validityPeriod": "Geldig vanaf ma 29 nov. t/m vr 14 jan. 2022",
+            "summary": "Diverse soorten",
+            "offline": false,
+            "tags": [
+              {
+                "type": "tag",
+                "text": "2e halve prijs"
+              }
+            ],
+            "badgeImage": {
+              "main": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            },
+            "stickerBadges": [],
+            "enablePromoAssistance": true
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+          },
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/kerst.png",
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/tht-7+.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "456049BAK",
+          "title": "Jumbo Ovenschotel Zalm met Peterseliepesto 540g",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 1199
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 2220
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "208629FLS",
+            "278404FLS",
+            "158171STK",
+            "457065STK"
+          ],
+          "nixProduct": false,
+          "quantity": "540 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/281120211905_456049BAK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {},
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/kerst.png",
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/tht-3+.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "457089BAK",
+          "title": "Jumbo Kerstboom Pasteitje 140g",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 399
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 2850
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "304661BAK",
+            "204492STK",
+            "381677BLK",
+            "444043BLK",
+            "304145BLK"
+          ],
+          "nixProduct": false,
+          "quantity": "140 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/291120212016_457089BAK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "promotion": {
+            "id": "2778001-B-1",
+            "name": "Kies & Mix borrelhapjes",
+            "label": "Kies & Mix borrelhapjes",
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2021/Seizoen/SA12/Kerst%20borrel.png",
+            "fromDate": 1638140460000,
+            "toDate": 1642201140000,
+            "validityPeriod": "Geldig vanaf ma 29 nov. t/m vr 14 jan. 2022",
+            "summary": "Diverse soorten",
+            "offline": false,
+            "tags": [
+              {
+                "type": "tag",
+                "text": "2e halve prijs"
+              }
+            ],
+            "badgeImage": {
+              "main": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            },
+            "stickerBadges": [],
+            "enablePromoAssistance": true
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+          },
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/tht-7+.png",
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/kerst.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "456931STK",
+          "title": "Jumbo Aardappelgratin Naturel 700g",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 549
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 784
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "295224BAK",
+            "458280DS",
+            "388978KGR",
+            "457086CUP",
+            "461418STK"
+          ],
+          "nixProduct": false,
+          "quantity": "700 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/301120211342_456931STK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {},
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/tht-7+.png",
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/kerst.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "457087CUP",
+          "title": "Jumbo Amuse Glaasjes Zalm en Avocado 6 Stuks",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 599
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 2852
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "456611DS",
+            "456618STK",
+            "204492STK",
+            "457088CUP",
+            "457086CUP"
+          ],
+          "nixProduct": false,
+          "quantity": "210 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/291120212205_457087CUP-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "promotion": {
+            "id": "2778001-B-1",
+            "name": "Kies & Mix borrelhapjes",
+            "label": "Kies & Mix borrelhapjes",
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2021/Seizoen/SA12/Kerst%20borrel.png",
+            "fromDate": 1638140460000,
+            "toDate": 1642201140000,
+            "validityPeriod": "Geldig vanaf ma 29 nov. t/m vr 14 jan. 2022",
+            "summary": "Diverse soorten",
+            "offline": false,
+            "tags": [
+              {
+                "type": "tag",
+                "text": "2e halve prijs"
+              }
+            ],
+            "badgeImage": {
+              "main": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            },
+            "stickerBadges": [],
+            "enablePromoAssistance": true
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+          },
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/tht-5+.png",
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/kerst.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "456618STK",
+          "title": "Jumbo Mini Pizza Paddenstoelen 142g",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 350
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 2448
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "457087CUP",
+            "458280DS",
+            "461418STK",
+            "456617STK",
+            "456615STK"
+          ],
+          "nixProduct": false,
+          "quantity": "142 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/301120211337_456618STK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "promotion": {
+            "id": "2778001-B-1",
+            "name": "Kies & Mix borrelhapjes",
+            "label": "Kies & Mix borrelhapjes",
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2021/Seizoen/SA12/Kerst%20borrel.png",
+            "fromDate": 1638140460000,
+            "toDate": 1642201140000,
+            "validityPeriod": "Geldig vanaf ma 29 nov. t/m vr 14 jan. 2022",
+            "summary": "Diverse soorten",
+            "offline": false,
+            "tags": [
+              {
+                "type": "tag",
+                "text": "2e halve prijs"
+              }
+            ],
+            "badgeImage": {
+              "main": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            },
+            "stickerBadges": [],
+            "enablePromoAssistance": true
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+          },
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/kerst.png",
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/tht-7+.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "448955FLS",
+          "title": "Cava Brut - Jumbo 100 Jaar - Magnum 1,5L",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 999
+            },
+            "unitPrice": {
+              "unit": "l",
+              "price": {
+                "currency": "EUR",
+                "amount": 666
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "446546DS",
+            "446545DS",
+            "296735FLS",
+            "445304STK",
+            "458280DS"
+          ],
+          "nixProduct": false,
+          "quantity": "1500 ML",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/211020211730_448955FLS-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {},
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/kerst.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "456613DS",
+          "title": "Jumbo Mini Taartje Tomaat, Paprika & Courgette 280g",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 399
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 1425
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "457088CUP",
+            "458280DS",
+            "461418STK",
+            "456611DS",
+            "456646DS"
+          ],
+          "nixProduct": false,
+          "quantity": "280 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/291120211254_456613DS-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "promotion": {
+            "id": "2778001-B-1",
+            "name": "Kies & Mix borrelhapjes",
+            "label": "Kies & Mix borrelhapjes",
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2021/Seizoen/SA12/Kerst%20borrel.png",
+            "fromDate": 1638140460000,
+            "toDate": 1642201140000,
+            "validityPeriod": "Geldig vanaf ma 29 nov. t/m vr 14 jan. 2022",
+            "summary": "Diverse soorten",
+            "offline": false,
+            "tags": [
+              {
+                "type": "tag",
+                "text": "2e halve prijs"
+              }
+            ],
+            "badgeImage": {
+              "main": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            },
+            "stickerBadges": [],
+            "enablePromoAssistance": true
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+          },
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/kerst.png",
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/tht-7+.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "456646DS",
+          "title": "Jumbo Mini Taartje Kerstomaatjes met Mozzarella 270g",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 399
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 1478
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "457086CUP",
+            "458280DS",
+            "461418STK",
+            "456611DS",
+            "456613DS"
+          ],
+          "nixProduct": false,
+          "quantity": "270 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/291120211300_456646DS-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "promotion": {
+            "id": "2778001-B-1",
+            "name": "Kies & Mix borrelhapjes",
+            "label": "Kies & Mix borrelhapjes",
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2021/Seizoen/SA12/Kerst%20borrel.png",
+            "fromDate": 1638140460000,
+            "toDate": 1642201140000,
+            "validityPeriod": "Geldig vanaf ma 29 nov. t/m vr 14 jan. 2022",
+            "summary": "Diverse soorten",
+            "offline": false,
+            "tags": [
+              {
+                "type": "tag",
+                "text": "2e halve prijs"
+              }
+            ],
+            "badgeImage": {
+              "main": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            },
+            "stickerBadges": [],
+            "enablePromoAssistance": true
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+          },
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/tht-7+.png",
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/kerst.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "456615STK",
+          "title": "Jumbo Mini Pizza Mozzarella 150g",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 350
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 2333
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "457086CUP",
+            "458280DS",
+            "461418STK",
+            "456618STK",
+            "456617STK"
+          ],
+          "nixProduct": false,
+          "quantity": "150 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/281120211928_456615STK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "promotion": {
+            "id": "2778001-B-1",
+            "name": "Kies & Mix borrelhapjes",
+            "label": "Kies & Mix borrelhapjes",
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2021/Seizoen/SA12/Kerst%20borrel.png",
+            "fromDate": 1638140460000,
+            "toDate": 1642201140000,
+            "validityPeriod": "Geldig vanaf ma 29 nov. t/m vr 14 jan. 2022",
+            "summary": "Diverse soorten",
+            "offline": false,
+            "tags": [
+              {
+                "type": "tag",
+                "text": "2e halve prijs"
+              }
+            ],
+            "badgeImage": {
+              "main": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            },
+            "stickerBadges": [],
+            "enablePromoAssistance": true
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+          },
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/tht-3+.png",
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/kerst.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "457086CUP",
+          "title": "Jumbo Amuse Glaasjes Garnalencocktail 6 Stuks",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 599
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 2852
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "456611DS",
+            "456618STK",
+            "204492STK",
+            "457088CUP",
+            "457087CUP"
+          ],
+          "nixProduct": false,
+          "quantity": "210 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/291120212017_457086CUP-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "promotion": {
+            "id": "2778001-B-1",
+            "name": "Kies & Mix borrelhapjes",
+            "label": "Kies & Mix borrelhapjes",
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2021/Seizoen/SA12/Kerst%20borrel.png",
+            "fromDate": 1638140460000,
+            "toDate": 1642201140000,
+            "validityPeriod": "Geldig vanaf ma 29 nov. t/m vr 14 jan. 2022",
+            "summary": "Diverse soorten",
+            "offline": false,
+            "tags": [
+              {
+                "type": "tag",
+                "text": "2e halve prijs"
+              }
+            ],
+            "badgeImage": {
+              "main": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            },
+            "stickerBadges": [],
+            "enablePromoAssistance": true
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+          },
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/kerst.png",
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/tht-5+.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "457846BAK",
+          "title": "Jumbo Mini Hamburgers 6 Stuks",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 499
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 4158
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "417633FLS",
+            "221138STK",
+            "213417POT",
+            "363319PAK",
+            "363672STK"
+          ],
+          "nixProduct": false,
+          "quantity": "120 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/261120211459_457846BAK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "promotion": {
+            "id": "2778001-B-1",
+            "name": "Kies & Mix borrelhapjes",
+            "label": "Kies & Mix borrelhapjes",
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2021/Seizoen/SA12/Kerst%20borrel.png",
+            "fromDate": 1638140460000,
+            "toDate": 1642201140000,
+            "validityPeriod": "Geldig vanaf ma 29 nov. t/m vr 14 jan. 2022",
+            "summary": "Diverse soorten",
+            "offline": false,
+            "tags": [
+              {
+                "type": "tag",
+                "text": "2e halve prijs"
+              }
+            ],
+            "badgeImage": {
+              "main": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            },
+            "stickerBadges": [],
+            "enablePromoAssistance": true
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+          },
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/tht-7+.png",
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/kerst.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "458280DS",
+          "title": "Jumbo IJstaart Omelette Sibérienne 8 Personen",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 799
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 1087
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "398750DS",
+            "446545DS",
+            "375502STK",
+            "442087STK",
+            "306043SC"
+          ],
+          "nixProduct": false,
+          "quantity": "735 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/021220210805_458280DS-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {},
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/kerst.png",
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/sticker-freeze-51x51.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "457675KGR",
+          "title": "Jumbo Entrecote Roast met Cranberry's ca. 600g",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 894
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 1490
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "375505STK",
+            "204131FLS",
+            "382372FLS",
+            "385894BKR",
+            "457317TRA"
+          ],
+          "nixProduct": false,
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/021220210802_457675KGR-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {},
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/kerst.png",
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/tht-3+.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "71499NET",
+          "title": "Jumbo Mandarijnen 1kg",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 219
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 219
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [],
+          "nixProduct": false,
+          "quantity": "1 KG",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/100520190519_71499NET-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "promotion": {
+            "id": "2567023-C-1",
+            "name": "Kies & mix fruit",
+            "label": "Kies & mix fruit",
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2021/Seizoen/SA13/Kies%20en%20Mix%20Fruit_280px.png",
+            "fromDate": 1638918060000,
+            "toDate": 1641337199000,
+            "validityPeriod": "Geldig vanaf wo 8 dec. t/m di 4 jan. 2022",
+            "summary": "Kanzi appels zak 1 kilo, mandarijnen net 1 kilo, blauwe bessen of frambozen bakje 125 gram",
+            "offline": false,
+            "tags": [
+              {
+                "type": "tag",
+                "text": "3 voor € 5,00"
+              }
+            ],
+            "badgeImage": {
+              "main": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            },
+            "stickerBadges": [],
+            "enablePromoAssistance": true
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+          },
+          "stickerBadges": [],
+          "sample": false
+        },
+        {
+          "id": "457872TRA",
+          "title": "Jumbo Mini Biefstuk 112g",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 300
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 2679
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [
+            "308439BAK",
+            "213820TRA",
+            "213763TRA",
+            "308440BAK",
+            "213686TRA"
+          ],
+          "nixProduct": false,
+          "quantity": "110 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/021120210610_457872TRA-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "promotion": {
+            "id": "1303057-B-1",
+            "name": "Kies & Mix Gourmet",
+            "label": "Kies & Mix Gourmet",
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Grocery-Site/-/Jumbo-Grocery/nl_NL/Images_Aanbiedingen/2021/Weekaanbiedingen/Week%2047/Gourmet%20kerst%202.png",
+            "fromDate": 1638486060000,
+            "toDate": 1641337140000,
+            "validityPeriod": "Geldig vanaf vr 3 dec. t/m di 4 jan. 2022",
+            "summary": "Diverse artikelen",
+            "offline": false,
+            "tags": [
+              {
+                "type": "tag",
+                "text": "4+2 gratis"
+              }
+            ],
+            "badgeImage": {
+              "main": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            },
+            "stickerBadges": [],
+            "enablePromoAssistance": true
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/web/WFS/Jumbo-Grocery-Site/nl_NL/-/EUR/ViewPromotionAttachment-OpenFile?LocaleId=nl_NL&DirectoryPath=0003-Kies%26Mix&FileName=Kies%20%26%20Mix.png&UnitName=Jumbo-Grocery"
+          },
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/tht-2+.png"
+          ],
+          "sample": false
+        },
+        {
+          "id": "673692PAK",
+          "title": "Campina Botergoud Ongezouten Grasboter 250g",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 286
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 1144
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [],
+          "nixProduct": false,
+          "quantity": "250 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/021020210220_673692PAK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {},
+          "stickerBadges": [],
+          "sample": false
+        },
+        {
+          "id": "188501PAK",
+          "title": "Jumbo - Kaiserbroodjes - 4 Stuks",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 49
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 245
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [],
+          "nixProduct": false,
+          "quantity": "200 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/250720200325_188501PAK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/alp.png?test"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/alp.png?test"
+          },
+          "stickerBadges": [],
+          "sample": false
+        },
+        {
+          "id": "302241PAK",
+          "title": "Jumbo Paprika Mix 3 Stuks",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 199
+            },
+            "unitPrice": {
+              "unit": "piece",
+              "price": {
+                "currency": "EUR",
+                "amount": 66
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [],
+          "nixProduct": false,
+          "quantity": "3 stuks",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/090920202353_302241PAK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/alp.png?test"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/alp.png?test"
+          },
+          "stickerBadges": [],
+          "sample": false
+        },
+        {
+          "id": "291627PAK",
+          "title": "Jumbo Roomboter Ongezouten 250g",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 189
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 756
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [],
+          "nixProduct": false,
+          "quantity": "250 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/281120192238_291627PAK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/alp.png?test"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/alp.png?test"
+          },
+          "stickerBadges": [],
+          "sample": false
+        },
+        {
+          "id": "302250KGR",
+          "title": "Jumbo Broccoli (1 à 2 Stronken)",
+          "quantityOptions": [
+            {
+              "defaultAmount": 500,
+              "minimumAmount": 500,
+              "amountStep": 500,
+              "unit": "grams",
+              "maximumAmount": 999000
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 109
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 218
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [],
+          "nixProduct": false,
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/271120200047_302250KGR-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/alp.png?test"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/alp.png?test"
+          },
+          "stickerBadges": [],
+          "sample": false
+        },
+        {
+          "id": "225592PAK",
+          "title": "Jumbo - Witte Baguette - 2 Stuks",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 49
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 163
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [],
+          "nixProduct": false,
+          "quantity": "300 g",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/290720200416_225592PAK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/alp.png?test"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/alp.png?test"
+          },
+          "stickerBadges": [],
+          "sample": false
+        },
+        {
+          "id": "207395ZK",
+          "title": "Dole Bananen 1kg",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 139
+            },
+            "unitPrice": {
+              "unit": "kg",
+              "price": {
+                "currency": "EUR",
+                "amount": 139
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [],
+          "nixProduct": false,
+          "quantity": "1 KG",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/060920211125_207395ZK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/alp.png?test"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/alp.png?test"
+          },
+          "stickerBadges": [],
+          "sample": false
+        },
+        {
+          "id": "338006STK",
+          "title": "Bananen en Mandarijnen",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 358
+            }
+          },
+          "available": true,
+          "productType": "RetailSet",
+          "crossSellSKUList": [],
+          "nixProduct": false,
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/240120201149_338006STK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {},
+          "stickerBadges": [],
+          "sample": false
+        },
+        {
+          "id": "67649PAK",
+          "title": "Jumbo Verse Halfvolle Melk 2L",
+          "quantityOptions": [
+            {
+              "defaultAmount": 1,
+              "minimumAmount": 1,
+              "amountStep": 1,
+              "unit": "pieces",
+              "maximumAmount": 99
+            }
+          ],
+          "prices": {
+            "price": {
+              "currency": "EUR",
+              "amount": 174
+            },
+            "unitPrice": {
+              "unit": "l",
+              "price": {
+                "currency": "EUR",
+                "amount": 87
+              }
+            }
+          },
+          "available": true,
+          "productType": "Product",
+          "crossSellSKUList": [],
+          "nixProduct": false,
+          "quantity": "2000 ml",
+          "imageInfo": {
+            "primaryView": [
+              {
+                "url": "https://ish-images-static.prod.cloud.jumbo.com/product_images/060920210337_67649PAK-1_360x360.png",
+                "height": 360,
+                "width": 360
+              }
+            ]
+          },
+          "badgesToDisplay": {
+            "leftTop": {
+              "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/alp.png?test"
+            }
+          },
+          "badge": {
+            "image": "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/alp.png?test"
+          },
+          "stickerBadges": [
+            "https://www.jumbo.com/INTERSHOP/static/WFS/Jumbo-Site/Grocery/Jumbo-Grocery/nl_NL/PIMProductBadge/tht-5+.png"
+          ],
+          "sample": false
+        }
+      ],
+      "total": 21031,
+      "offset": 0
+    },
+    "filters": {},
+    "horizontalFilters": {
+      "data": [
+        {
+          "title": "Aardappel, rijst, pasta",
+          "filters": "4294962923"
+        },
+        {
+          "title": "Vlees, vis, vegetarisch",
+          "filters": "4294962266"
+        },
+        {
+          "title": "Groente",
+          "filters": "4294964248"
+        },
+        {
+          "title": "Fruit",
+          "filters": "4294962099"
+        },
+        {
+          "title": "Koken, soepen, maaltijden",
+          "filters": "4294963830"
+        },
+        {
+          "title": "Diepvries",
+          "filters": "4294964047"
+        },
+        {
+          "title": "Brood, cereals, beleg",
+          "filters": "4294963453"
+        },
+        {
+          "title": "Zuivel, eieren, boter",
+          "filters": "4294963250"
+        },
+        {
+          "title": "Koek, gebak, snoep, chips",
+          "filters": "4294961975"
+        },
+        {
+          "title": "Fris, sap, koffie, thee",
+          "filters": "4294962869"
+        },
+        {
+          "title": "Wijn, bier, sterke drank",
+          "filters": "4294962760"
+        },
+        {
+          "title": "Drogisterij",
+          "filters": "4294961713"
+        },
+        {
+          "title": "Baby, peuter",
+          "filters": "4294962997"
+        },
+        {
+          "title": "Huishouden, dieren, servicebalie",
+          "filters": "4294961562"
+        }
+      ]
+    },
+    "sortOptions": {
+      "data": [
+        {
+          "title": "Populair",
+          "sort": "P_Sales|1"
+        },
+        {
+          "title": "Prijs (laag-hoog)",
+          "sort": "P_Price|0"
+        },
+        {
+          "title": "Prijs (hoog-laag)",
+          "sort": "P_Price|1"
+        },
+        {
+          "title": "Alfabetisch (A-Z)",
+          "sort": "P_Title|0"
+        },
+        {
+          "title": "Alfabetisch (Z-A)",
+          "sort": "P_Title|1"
+        },
+        {
+          "title": "Prijs per eenheid (laag-hoog)",
+          "sort": "pricePerWeightMeasure|0"
+        }
+      ]
+    },
+    "productLists": {
+      "data": []
+    },
+    "advertisements": {
+      "data": [
+        {
+          "position": 4,
+          "adUnitIdAndroid": "/11692722/JUMBO.COM_APP_ANDROID/JUMBO.COM_APP_ANDROID_PRODUCT_LISTER_TOP",
+          "adUnitIdiPhone": "/11692722/JUMBO.COM_APP_IOS/JUMBO.COM_APP_IOS_PRODUCT_LISTER_TOP",
+          "adUnitIdiPad": "/11692722/JUMBO.COM_APP_IOS/JUMBO.COM_TABLET_APP_IOS_PRODUCT_LISTER_TOP"
+        },
+        {
+          "position": 11,
+          "adUnitIdAndroid": "/11692722/JUMBO.COM_APP_ANDROID/JUMBO.COM_APP_ANDROID_PRODUCT_LISTER_DOWN",
+          "adUnitIdiPhone": "/11692722/JUMBO.COM_APP_IOS/JUMBO.COM_APP_IOS_PRODUCT_LISTER_DOWN",
+          "adUnitIdiPad": "/11692722/JUMBO.COM_APP_IOS/JUMBO.COM_TABLET_APP_IOS_PRODUCT_LISTER_DOWN"
+        }
+      ]
+    }
+  }
+]

@@ -21,6 +21,7 @@ export class LambdaStack extends cdk.Stack {
   public readonly ahScraperLambda: IFunction;
   public readonly dirkScraperLambda: IFunction;
   public readonly coopScraperLambda: IFunction;
+  public readonly parquetLambda: IFunction;
 
   constructor(scope: cdk.Construct, id: string, props: lambdaStackProps) {
     super(scope, id, props);
@@ -103,6 +104,19 @@ export class LambdaStack extends cdk.Stack {
     eventRule.addTarget(new targets.LambdaFunction(this.ahScraperLambda));
     eventRule.addTarget(new targets.LambdaFunction(this.dirkScraperLambda));
     eventRule.addTarget(new targets.LambdaFunction(this.coopScraperLambda));
+
+    this.parquetLambda = new lambda.Function(this, "Convert to Parquet", {
+      runtime: lambda.Runtime.PYTHON_3_9,
+      handler: "convert_to_parquet.handler",
+      code: lambda.Code.fromAsset(path.join(__dirname, "./src")),
+      layers: [webshopLayer],
+      timeout: Duration.minutes(2),
+      memorySize: 512,
+      environment: {
+        bucket_name: props.landingZoneBucket.bucketName,
+      },
+      role: lambdaRole,
+    });
   }
 
   _createLambdaRole(lambdaStackProps: lambdaStackProps) {
