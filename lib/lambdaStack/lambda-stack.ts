@@ -7,6 +7,7 @@ import * as iam from "@aws-cdk/aws-iam";
 import { IFunction } from "@aws-cdk/aws-lambda";
 import * as events from "@aws-cdk/aws-events";
 import * as targets from "@aws-cdk/aws-events-targets";
+import * as s3n from "@aws-cdk/aws-s3-notifications";
 
 export interface lambdaStackProps extends cdk.StackProps {
   landingZoneBucket: s3.IBucket;
@@ -117,6 +118,13 @@ export class LambdaStack extends cdk.Stack {
       },
       role: lambdaRole,
     });
+
+    props.landingZoneBucket.addEventNotification(
+      s3.EventType.OBJECT_CREATED,
+      new s3n.LambdaDestination(this.parquetLambda)
+      // 👇 only invoke lambda if object matches the filter
+      // {prefix: 'test/', suffix: '.yaml'},
+    );
   }
 
   _createLambdaRole(lambdaStackProps: lambdaStackProps) {
