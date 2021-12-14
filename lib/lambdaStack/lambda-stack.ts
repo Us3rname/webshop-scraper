@@ -42,7 +42,7 @@ export class LambdaStack extends cdk.Stack {
       this,
       "Jumbo mobile webshop scraper",
       {
-        runtime: lambda.Runtime.PYTHON_3_9,
+        runtime: lambda.Runtime.PYTHON_3_8,
         handler: "main.handler",
         code: lambda.Code.fromAsset(path.join(__dirname, "./src/jumbo")),
         layers: [webshopLayer],
@@ -58,7 +58,7 @@ export class LambdaStack extends cdk.Stack {
       this,
       "AH mobile webshop scraper",
       {
-        runtime: lambda.Runtime.PYTHON_3_9,
+        runtime: lambda.Runtime.PYTHON_3_8,
         handler: "main.handler",
         code: lambda.Code.fromAsset(path.join(__dirname, "./src/ah")),
         layers: [webshopLayer],
@@ -72,7 +72,7 @@ export class LambdaStack extends cdk.Stack {
     );
 
     this.dirkScraperLambda = new lambda.Function(this, "Dirk webshop scraper", {
-      runtime: lambda.Runtime.PYTHON_3_9,
+      runtime: lambda.Runtime.PYTHON_3_8,
       handler: "main.handler",
       code: lambda.Code.fromAsset(path.join(__dirname, "./src/dirk")),
       layers: [webshopLayer],
@@ -85,7 +85,7 @@ export class LambdaStack extends cdk.Stack {
     });
 
     this.coopScraperLambda = new lambda.Function(this, "Coop webshop scraper", {
-      runtime: lambda.Runtime.PYTHON_3_9,
+      runtime: lambda.Runtime.PYTHON_3_8,
       handler: "main.handler",
       code: lambda.Code.fromAsset(path.join(__dirname, "./src/coop")),
       layers: [webshopLayer],
@@ -107,7 +107,7 @@ export class LambdaStack extends cdk.Stack {
     eventRule.addTarget(new targets.LambdaFunction(this.coopScraperLambda));
 
     this.parquetLambda = new lambda.Function(this, "Convert to Parquet", {
-      runtime: lambda.Runtime.PYTHON_3_9,
+      runtime: lambda.Runtime.PYTHON_3_8,
       handler: "convert_to_parquet.handler",
       code: lambda.Code.fromAsset(path.join(__dirname, "./src")),
       layers: [webshopLayer],
