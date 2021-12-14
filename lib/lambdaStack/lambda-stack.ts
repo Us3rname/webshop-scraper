@@ -122,8 +122,6 @@ export class LambdaStack extends cdk.Stack {
     props.landingZoneBucket.addEventNotification(
       s3.EventType.OBJECT_CREATED,
       new s3n.LambdaDestination(this.parquetLambda)
-      // 👇 only invoke lambda if object matches the filter
-      // {prefix: 'test/', suffix: '.yaml'},
     );
   }
 
