@@ -119,10 +119,10 @@ export class LambdaStack extends cdk.Stack {
       role: lambdaRole,
     });
 
-    props.landingZoneBucket.addEventNotification(
-      s3.EventType.OBJECT_CREATED,
-      new s3n.LambdaDestination(this.parquetLambda)
-    );
+    // props.landingZoneBucket.addEventNotification(
+    //   s3.EventType.OBJECT_CREATED,
+    //   new s3n.LambdaDestination(this.parquetLambda)
+    // );
   }
 
   _createLambdaRole(lambdaStackProps: lambdaStackProps) {
