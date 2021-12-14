@@ -41,4 +41,4 @@ def convert(event):
             file_path = 'jumbo/products' + s3Service.getPartitionedFilePath(datetime.today())
             file_name = 'response - ' + datetime.today().strftime('%Y-%m-%d %H:%M:%S') + '.json'
             
-            s3Service.saveJsonGZFile(parquetData, bucket_name, file_path + file_name) 
+            s3Service.saveGZFile(parquetData, bucket_name, file_path + file_name) 

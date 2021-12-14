@@ -40,3 +40,18 @@ class S3Service :
         except ClientError as e:
             logging.error(e)
             return False
+
+    def saveGZFile(self, values, bucket, key, encoding='utf-8'):
+        
+        # Add extension
+        key += '.gz'
+        try:  
+            inmem = io.BytesIO()
+            with gzip.GzipFile(fileobj=inmem, mode='wb') as fh:
+                with io.TextIOWrapper(fh, encoding=encoding) as wrapper:
+                    wrapper.write(values)
+            inmem.seek(0)
+            self.s3_client.put_object(Bucket=bucket, Body=inmem, Key=key)
+        except ClientError as e:
+            logging.error(e)
+            return False
