@@ -21,3 +21,4 @@ typing-extensions==4.0.1
 urllib3==1.26.7
 yarl==1.7.2
 fsspec==2021.11.1
+s3fs==2021.11.1
