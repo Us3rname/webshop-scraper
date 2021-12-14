@@ -13,7 +13,7 @@ class MyService extends cdk.Construct {
   constructor(scope: cdk.Construct, id: string, props: EnvProps) {
     super(scope, id);
 
-    const pipeline = new MyPipelineStack(
+    new MyPipelineStack(
       this,
       this.node.tryGetContext("default").application + "PipelineStack",
       props

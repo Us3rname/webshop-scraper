@@ -11,6 +11,7 @@ import * as s3n from "@aws-cdk/aws-s3-notifications";
 
 export interface lambdaStackProps extends cdk.StackProps {
   landingZoneBucket: s3.IBucket;
+  rawZoneBucket: s3.IBucket;
   jumboScraper: {
     roleName: string;
     roleDescription: string;
@@ -114,7 +115,7 @@ export class LambdaStack extends cdk.Stack {
       timeout: Duration.minutes(2),
       memorySize: 512,
       environment: {
-        bucket_name: props.landingZoneBucket.bucketName,
+        raw_zone_bucket_name: props.rawZoneBucket.bucketName,
       },
       role: lambdaRole,
     });

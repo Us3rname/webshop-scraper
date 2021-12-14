@@ -39,7 +39,8 @@
     },
 
     "develop": {
-      "landingZoneBucketName": "landingzone"
+      "landingZoneBucketName": "landingzone",
+      "rawZoneBucketName": "rawzone"
     }
   }
 }

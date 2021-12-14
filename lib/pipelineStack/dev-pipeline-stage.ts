@@ -23,12 +23,19 @@ export class DevPipelineStage extends cdk.Stage {
           application +
           "-" +
           this.node.tryGetContext(environment).landingZoneBucketName,
+        rawZoneBucketName:
+          environment +
+          "-" +
+          application +
+          "-" +
+          this.node.tryGetContext(environment).rawZoneBucketName,
       }
     );
 
     new LambdaStack(this, environment + "-" + application + "-LambdaStack", {
       env,
       landingZoneBucket: lakehouseStack.landingzoneBucket,
+      rawZoneBucket: lakehouseStack.rawzoneBucket,
       jumboScraper: {
         roleDescription:
           "Role that is being used for scraping the jumbo website",
