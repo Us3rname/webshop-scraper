@@ -134,6 +134,8 @@ export class LambdaStack extends cdk.Stack {
           resources: [
             lambdaStackProps.landingZoneBucket.bucketArn,
             lambdaStackProps.landingZoneBucket.bucketArn + "*",
+            lambdaStackProps.rawZoneBucket.bucketArn,
+            lambdaStackProps.rawZoneBucket.bucketArn + "*",
           ],
           actions: ["s3:GetObject", "s3:PutObject"],
           effect: iam.Effect.ALLOW,
