@@ -14,11 +14,11 @@ class ProcessProducts:
         return [
         'aardappel-groente-fruit', 
         'salades-pizza-maaltijden', 
-        # 'vlees-kip-vis-vega', 
-        # 'kaas-vleeswaren-tapas', 'zuivel-plantaardig-en-eieren',
-        # 'bakkerij-en-banket', 'ontbijtgranen-broodbeleg-tussendoor', 'frisdrank-sappen-koffie-thee', 'wijn-en-bubbels', 'bier-en-aperitieven',
-        # 'pasta-rijst-en-wereldkeuken', 'soepen-sauzen-kruiden-olie', 'snoep-koek-chips-en-chocolade', 'diepvries', 'baby-verzorging-en-hygiene',
-        # 'bewuste-voeding', 'huishouden-huisdier', 'koken-tafelen-vrije-tijd'
+        'vlees-kip-vis-vega', 
+        'kaas-vleeswaren-tapas', 'zuivel-plantaardig-en-eieren',
+        'bakkerij-en-banket', 'ontbijtgranen-broodbeleg-tussendoor', 'frisdrank-sappen-koffie-thee', 'wijn-en-bubbels', 'bier-en-aperitieven',
+        'pasta-rijst-en-wereldkeuken', 'soepen-sauzen-kruiden-olie', 'snoep-koek-chips-en-chocolade', 'diepvries', 'baby-verzorging-en-hygiene',
+        'bewuste-voeding', 'huishouden-huisdier', 'koken-tafelen-vrije-tijd'
         ]
 
     async def get_total_amount_of_products(self, session, category):
