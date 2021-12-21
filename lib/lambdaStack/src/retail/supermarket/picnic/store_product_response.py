@@ -1,6 +1,4 @@
 import time
-import requests
-from requests.exceptions import HTTPError
 import logging
 from picnic_api import PicnicAPI
 import json

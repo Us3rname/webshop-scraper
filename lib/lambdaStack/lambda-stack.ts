@@ -45,7 +45,9 @@ export class LambdaStack extends cdk.Stack {
       {
         runtime: lambda.Runtime.PYTHON_3_8,
         handler: "main.handler",
-        code: lambda.Code.fromAsset(path.join(__dirname, "./src/jumbo")),
+        code: lambda.Code.fromAsset(
+          path.join(__dirname, "./retail/supermarket/src/jumbo")
+        ),
         layers: [webshopLayer],
         timeout: Duration.minutes(1),
         environment: {
@@ -61,7 +63,9 @@ export class LambdaStack extends cdk.Stack {
       {
         runtime: lambda.Runtime.PYTHON_3_8,
         handler: "main.handler",
-        code: lambda.Code.fromAsset(path.join(__dirname, "./src/ah")),
+        code: lambda.Code.fromAsset(
+          path.join(__dirname, "./retail/supermarket/src/ah")
+        ),
         layers: [webshopLayer],
         timeout: Duration.minutes(2),
         memorySize: 1024,
@@ -75,7 +79,9 @@ export class LambdaStack extends cdk.Stack {
     this.dirkScraperLambda = new lambda.Function(this, "Dirk webshop scraper", {
       runtime: lambda.Runtime.PYTHON_3_8,
       handler: "main.handler",
-      code: lambda.Code.fromAsset(path.join(__dirname, "./src/dirk")),
+      code: lambda.Code.fromAsset(
+        path.join(__dirname, "./retail/supermarket/src/dirk")
+      ),
       layers: [webshopLayer],
       timeout: Duration.minutes(1),
       memorySize: 1024,
@@ -88,7 +94,9 @@ export class LambdaStack extends cdk.Stack {
     this.coopScraperLambda = new lambda.Function(this, "Coop webshop scraper", {
       runtime: lambda.Runtime.PYTHON_3_8,
       handler: "main.handler",
-      code: lambda.Code.fromAsset(path.join(__dirname, "./src/coop")),
+      code: lambda.Code.fromAsset(
+        path.join(__dirname, "./retail/supermarket/src/coop")
+      ),
       layers: [webshopLayer],
       timeout: Duration.minutes(2),
       memorySize: 512,

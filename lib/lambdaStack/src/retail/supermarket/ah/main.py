@@ -20,7 +20,7 @@ def handler(event, context):
     result = []
     for file in file_paths:
         with open(file, "rb") as infile:
-            result.append(json.load(infile))
+            result += json.load(infile)
 
     store_file(result)
 
