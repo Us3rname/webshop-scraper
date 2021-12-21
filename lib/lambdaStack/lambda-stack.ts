@@ -46,7 +46,7 @@ export class LambdaStack extends cdk.Stack {
         runtime: lambda.Runtime.PYTHON_3_8,
         handler: "main.handler",
         code: lambda.Code.fromAsset(
-          path.join(__dirname, "./retail/supermarket/src/jumbo")
+          path.join(__dirname, "./src/retail/supermarket/jumbo")
         ),
         layers: [webshopLayer],
         timeout: Duration.minutes(1),
@@ -64,7 +64,7 @@ export class LambdaStack extends cdk.Stack {
         runtime: lambda.Runtime.PYTHON_3_8,
         handler: "main.handler",
         code: lambda.Code.fromAsset(
-          path.join(__dirname, "./retail/supermarket/src/ah")
+          path.join(__dirname, "./src/retail/supermarket/ah")
         ),
         layers: [webshopLayer],
         timeout: Duration.minutes(2),
@@ -80,7 +80,7 @@ export class LambdaStack extends cdk.Stack {
       runtime: lambda.Runtime.PYTHON_3_8,
       handler: "main.handler",
       code: lambda.Code.fromAsset(
-        path.join(__dirname, "./retail/supermarket/src/dirk")
+        path.join(__dirname, "./src/retail/supermarket/dirk")
       ),
       layers: [webshopLayer],
       timeout: Duration.minutes(1),
@@ -95,7 +95,7 @@ export class LambdaStack extends cdk.Stack {
       runtime: lambda.Runtime.PYTHON_3_8,
       handler: "main.handler",
       code: lambda.Code.fromAsset(
-        path.join(__dirname, "./retail/supermarket/src/coop")
+        path.join(__dirname, "./src/retail/supermarket/coop")
       ),
       layers: [webshopLayer],
       timeout: Duration.minutes(2),
