@@ -1,4 +1,5 @@
 import * as cdk from "@aws-cdk/core";
+import { DataOrchestrationStack } from "../dataOrchestrationStack/data-orchestration-stack";
 import { LakehouseStack } from "../lakehouseStack/lakehouse-stack";
 import { LambdaStack } from "../lambdaStack/lambda-stack";
 
@@ -32,15 +33,28 @@ export class DevPipelineStage extends cdk.Stage {
       }
     );
 
-    new LambdaStack(this, environment + "-" + application + "-LambdaStack", {
-      env,
-      landingZoneBucket: lakehouseStack.landingzoneBucket,
-      rawZoneBucket: lakehouseStack.rawzoneBucket,
-      jumboScraper: {
-        roleDescription:
-          "Role that is being used for scraping the jumbo website",
-        roleName: environment + "-" + application + "-" + "LambdaRoleJumbo",
-      },
-    });
+    const lambdaStack = new LambdaStack(
+      this,
+      environment + "-" + application + "-LambdaStack",
+      {
+        env,
+        landingZoneBucket: lakehouseStack.landingzoneBucket,
+        rawZoneBucket: lakehouseStack.rawzoneBucket,
+        jumboScraper: {
+          roleDescription:
+            "Role that is being used for scraping the jumbo website",
+          roleName: environment + "-" + application + "-" + "LambdaRoleJumbo",
+        },
+      }
+    );
+
+    new DataOrchestrationStack(
+      this,
+      environment + "-" + application + "-DataOrchestrationStack",
+      {
+        scrapeDirkLambda: lambdaStack.dirkScraperLambda,
+        scrapeJumboLambda: lambdaStack.jumboScraperLambda,
+      }
+    );
   }
 }

@@ -19,11 +19,11 @@ export interface lambdaStackProps extends cdk.StackProps {
 }
 
 export class LambdaStack extends cdk.Stack {
-  public readonly jumboScraperLambda: IFunction;
-  public readonly ahScraperLambda: IFunction;
-  public readonly dirkScraperLambda: IFunction;
-  public readonly coopScraperLambda: IFunction;
-  public readonly parquetLambda: IFunction;
+  public readonly jumboScraperLambda: lambda.Function;
+  public readonly ahScraperLambda: lambda.Function;
+  public readonly dirkScraperLambda: lambda.Function;
+  public readonly coopScraperLambda: lambda.Function;
+  public readonly parquetLambda: lambda.Function;
 
   constructor(scope: cdk.Construct, id: string, props: lambdaStackProps) {
     super(scope, id, props);
