@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: webshop_scraper
+    database: WEBSHOP_SCRAPER
+    schema: PUBLIC
+    tables:
+      - name: stage_jumbo_webshop_products
