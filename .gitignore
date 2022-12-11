@@ -23,4 +23,14 @@ __pycache__/
 # Serverless directories
 .serverless
 
-node_modules/
+__pycache__
+node_modules
+serverless_sdk
+services/api_scraper/s_createProduct.py
+services/api_scraper/ah/data
+services/api_scraper/coop/data
+services/api_scraper/dirk/data
+services/api_scraper/jumbo/data
+services/api_scraper/picnic/data
+
+dbt-env

@@ -1,16 +1,3 @@
-# Welcome to Serverless!
-#
-# This file is the main config file for your service.
-# It's very minimal at this point and uses default values.
-# You can always add more config options for more control.
-# We've included some commented out config examples here.
-# Just uncomment any of them to get that config option.
-#
-# For full config options, check the docs:
-#    docs.serverless.com
-#
-# Happy Coding!
-
 service: webshop-api-scraper
 # app and org for use with dashboard.serverless.com
 app: scraper-webshop
@@ -21,43 +8,42 @@ org: patrickkompier
 frameworkVersion: '2'
 
 custom:
-  # pythonRequirements:
-  #   dockerizePip: non-linux
+  pythonRequirements:
+    dockerizePip: non-linux
   # Our stage is based on what is passed in when running serverless
   # commands. Or falls back to what we have set in the provider section.
   stage: ${opt:stage, self:provider.stage}
   # Name of the SST app that's deploying our infrastructure
   sstApp: ${self:custom.stage}-webshop-scraper-infra
-  localstack:
-    stages:
-      # list of stages for which the plugin should be enabled
-      - dev
-    host: http://localhost  # optional - LocalStack host to connect to
-    edgePort: 4566  # optional - LocalStack edge port to connect to
-    autostart: true  # optional - Start LocalStack in Docker on Serverless deploy
-    lambda:
-      # Enable this flag to improve performance
-      mountCode: True
-    docker:
-      # Enable this flag to run "docker ..." commands as sudo
-      sudo: False
+  # localstack:
+  #   stages:
+  #     # list of stages for which the plugin should be enabled
+  #     - dev
+  #   host: http://localhost  # optional - LocalStack host to connect to
+  #   edgePort: 4566  # optional - LocalStack edge port to connect to
+  #   autostart: true  # optional - Start LocalStack in Docker on Serverless deploy
+  #   lambda:
+  #     # Enable this flag to improve performance
+  #     mountCode: True
+  #   docker:
+  #     # Enable this flag to run "docker ..." commands as sudo
+  #     sudo: False
 
 plugins:
   - serverless-python-requirements
   - serverless-dotenv-plugin
-  - serverless-localstack
 
 provider:
   name: aws
   stage: dev
-  region: eu-central-1
+  region: eu-west-1
   runtime: python3.8
   lambdaHashingVersion: 20201221  
 
   environment:
-    # s3ResponseBucketName: !ImportValue '${self:custom.sstApp}-s3ResponseBucketName'
-    # bijenkorfSQSName: !ImportValue '${self:custom.sstApp}-BijenkorfSQSTopicName'
-    # bijenkorfSQSArn: !ImportValue '${self:custom.sstApp}-BijenkorfSQSTopicArn'
+    s3ResponseBucketName: !ImportValue '${self:custom.sstApp}-s3ResponseBucketName'
+    BijenkorfProductSpecificationSQSTopicName: !ImportValue '${self:custom.sstApp}-BijenkorfProductSpecificationSQSTopicName'
+    bijenkorfSQSArn: !ImportValue '${self:custom.sstApp}-BijenkorfProductSpecificationSQSTopicArn'
 
   iamRoleStatements:
   - Effect: Allow
@@ -72,28 +58,50 @@ provider:
         - ""
         - - !ImportValue '${self:custom.sstApp}-s3ResponseBucketARN'
           - "/*"
-      # - !ImportValue '${self:custom.sstApp}-s3ResponseBucketARN'
   - Effect: Allow
     Action:
-      - sqs:*
-    # Restrict our IAM role permissions to
-    # the specific table for the stage
+      - sqs:* 
     Resource:      
       Fn::Join:
         - ""
-        - - !ImportValue '${self:custom.sstApp}-BijenkorfSQSTopicArn'
+        - - !ImportValue '${self:custom.sstApp}-BijenkorfProductSpecificationSQSTopicArn'
+  - Effect: Allow
+    Action:
+      - lambda:InvokeFunction
+      - lambda:InvokeAsync
+    Resource: "*"
+
+layers:
+  awsWrapper:
+    path: python
+    description: Wrapper on the AWS services
+    compatibleRuntimes: # optional, a list of runtimes this layer is compatible with
+      - python3.8
 
 functions:
-  storeBijenkorfProductResponse:
+  storeBijenkorfProductCatalog:
     timeout: 60
-    handler: bijenkorf/src/store_product_response.store_response
+    handler: bijenkorf/src/store_product_catalog.store_response
     events:
       - schedule: rate(1 day)
+  storeBijenkorfProductResponse:
+    timeout: 60
+    handler: bijenkorf/src/store_product_response.store_response    
   storeBijenkorfProductDetailResponse:
     timeout: 60
     handler: bijenkorf/src/store_product_detail_response.store_response
     events:
-      - sqs: 'arn:aws:sqs:eu-central-1:390567366752:dev-webshop-scraper-infra-webscraper-BijenkorfQueue0CAC392F-ALBMVIY0WXN9'
+      - sqs: 'arn:aws:sqs:eu-west-1:390567366752:dev-webshop-scraper-infra-webscra-SaveBijenkorfProductSpecificatio-1WJD9FWJF38RH'
+  storeZalandoProductCatalog:
+    timeout: 60
+    handler: zalando/src/store_product_catalog.store_response
+    events:
+      - schedule: rate(1 day)
+  storeZalandoProductResponse:
+    timeout: 60
+    handler: zalando/src/store_product_response.store_response
+    layers:
+        - {Ref: AwsWrapperLambdaLayer}   
   createProduct:
     handler: bijenkorf/src/create_product.hello
   createQueue:

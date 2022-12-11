@@ -4,13 +4,15 @@ import json
 import time
 import boto3    
 import os
+import io
+import gzip
+from ...aws_wrapper import S3Service
 
 def store_response(event, context):
 
-    transport = AIOHTTPTransport(
-            url="https://www.debijenkorf.nl/api/graphql")
-
+    transport = AIOHTTPTransport(url="https://www.debijenkorf.nl/api/graphql")    
     client = Client(transport=transport, fetch_schema_from_transport=True)
+
     query = """
             query { productListing(query: %s, locale: "nl-NL") { 
             metaInformation {
@@ -198,34 +200,48 @@ def store_response(event, context):
         """
 
     start_index = 0
-    s3 = boto3.resource('s3')
+    s3 = boto3.client('s3')
     sqs = boto3.resource('sqs')
 
-    queue = sqs.get_queue_by_name(QueueName="dev-webshop-scraper-infra-webscraper-BijenkorfQueue0CAC392F-ALBMVIY0WXN9")
+    s3Service = S3Service()
+
+    queue = sqs.get_queue_by_name(QueueName=os.environ['BijenkorfProductSpecificationSQSTopicName'])
 
     next_page_query = None
-    folder_name = time.strftime("%Y%m%d-%H%M%S")
+
+    # Likelyhood of that 40 items will be loaded within the 60 sec cap of the lambda function.
+    items_per_query = 40
+
+    # This date will be used for the folder on the S3 bucket
+    folder_name = event['dml_date']
 
     # Iterate at least one time (start_index == 0) and continue till there are no next pages left.
     while next_page_query is not None or start_index == 0:
         
         # Prepare & execute query
-        query_addition = "fh_location=//catalog01/nl_NL/categories<{catalog01_80}/categories<{catalog01_80_1040}" + "&fh_start_index={}&country=NL&chl=1&language=nl&fh_view_size={}".format(start_index, 50)
+        query_addition = "fh_location=//catalog01/nl_NL/categories<{{{}}}/categories<{{{}}}&fh_start_index={}&country=NL&chl=1&language=nl&fh_view_size={}".format(event['category_code'],event['sub_category_code'],start_index, items_per_query)
+        print(query_addition)
+        
         qpl = gql(query % ('"' + query_addition + '"'))
         result = client.execute(qpl)
         
         # Get all the products
         products = result['productListing']['navigation']['products']
+
+        # Determine if there is a next page (more items)
         next_page_query = None
         if result['productListing']['navigation']['pagination']['nextPage'] is not None:
             next_page_query = result['productListing']['navigation']['pagination']['nextPage']['query']
 
-        fileLocation =  'products/bijenkorf/{}/response - {} - {} - {}.json'.format(folder_name,time.strftime("%Y%m%d-%H%M%S"), start_index, start_index + len(products))
-        s3object = s3.Object(os.environ['s3ResponseBucketName'], fileLocation)
-
-        s3object.put(
-            Body=(bytes(json.dumps(result).encode('UTF-8')))
+        fileLocation =  'products/bijenkorf/{}/response - {} - {} - {} - {}.json.gz'.format(
+            folder_name, 
+            event['category'],
+            time.strftime("%Y%m%d-%H%M%S"), 
+            start_index, 
+            start_index + len(products)
         )
+
+        s3Service.upload_json_gz(s3, os.environ['s3ResponseBucketName'], fileLocation, result)
 
         response = queue.send_message(MessageBody="Producten {} t/m {}".format(start_index, start_index + len(products)), MessageAttributes = {
             'ProductS3Location': {
@@ -238,7 +254,7 @@ def store_response(event, context):
             }
         })
 
-        start_index += 50
+        start_index += items_per_query
 
     response = {
         "statusCode": 200,

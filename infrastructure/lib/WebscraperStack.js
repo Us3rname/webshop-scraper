@@ -11,16 +11,6 @@ export default class WebscraperStack extends sst.Stack {
     const app = this.node.root;
 
     this.bucket = new s3.Bucket(this, "WebshopResponse", {
-      lifecycleRules: [
-        {
-            transitions: [
-                {
-                    storageClass: s3.StorageClass.ONE_ZONE_INFREQUENT_ACCESS,
-                    transitionAfter: Duration.days(30),
-                },
-            ],
-        },
-    ],
     });
 
     // Export values
@@ -50,20 +40,36 @@ export default class WebscraperStack extends sst.Stack {
       exportName: app.logicalPrefixedName("TableArn"),
     });
 
-
-    const sqsBijenkorf = new sqs.Queue(this, 'Bijenkorf Queue', {
+    const sqsBijenkorfProductSpecifications = new sqs.Queue(this, 'Save Bijenkorf Product Specifications Queue', {
       visibilityTimeout: Duration.seconds(60),
       receiveMessageWaitTime: Duration.seconds(20)
     });
+   
     // Output values
-    new CfnOutput(this, "BijenkorfSQSTopicName", {
-      value: sqsBijenkorf.queueName,
-      exportName: app.logicalPrefixedName("BijenkorfSQSTopicName"),
+    new CfnOutput(this, "BijenkorfProductSpecificationSQSTopicName", {
+      value: sqsBijenkorfProductSpecifications.queueName,
+      exportName: app.logicalPrefixedName("BijenkorfProductSpecificationSQSTopicName"),
     });
 
-    new CfnOutput(this, "BijenkorfSQSTopicArn", {
-      value: sqsBijenkorf.queueArn,
-      exportName: app.logicalPrefixedName("BijenkorfSQSTopicArn"),
+    new CfnOutput(this, "BijenkorfProductSpecificationSQSTopicArn", {
+      value: sqsBijenkorfProductSpecifications.queueArn,
+      exportName: app.logicalPrefixedName("BijenkorfProductSpecificationSQSTopicArn"),
+    });
+
+    const sqsZalandoProductSpecification = new sqs.Queue(this, 'Save Zalando Product specifications Queue', {
+      visibilityTimeout: Duration.seconds(60),
+      receiveMessageWaitTime: Duration.seconds(20)
+    });
+   
+    // Output values
+    new CfnOutput(this, "ZalandoProductSpecificationsSQSTopicName", {
+      value: sqsZalandoProductSpecification.queueName,
+      exportName: app.logicalPrefixedName("ZalandoProductSpecificationsSQSTopicName"),
+    });
+
+    new CfnOutput(this, "ZalandoProductSpecificationsSQSTopicArn", {
+      value: sqsZalandoProductSpecification.queueArn,
+      exportName: app.logicalPrefixedName("ZalandoProductSpecificationsSQSTopicArn"),
     });
   
   }

@@ -1,0 +1,69 @@
+create role aws_int;
+grant create stage on schema public to role aws_int;
+
+CREATE STORAGE INTEGRATION int_aws_s3_webschop_scraper_jumbo
+  TYPE = EXTERNAL_STAGE
+  STORAGE_PROVIDER = 'S3'
+  ENABLED = TRUE
+  STORAGE_AWS_ROLE_ARN = 'arn:aws:iam::390567366752:role/snowflake-role'  
+  STORAGE_ALLOWED_LOCATIONS = ('s3://develop-webshop-scraper-landingzone/jumbo/');
+
+DESC INTEGRATION int_aws_s3_webschop_scraper_jumbo;
+
+grant usage on integration int_aws_s3_webschop_scraper_jumbo to role aws_int;
+
+CREATE STAGE jumbo_webshop_raw_products
+STORAGE_INTEGRATION = int_aws_s3_webschop_scraper_jumbo
+URL = 's3://develop-webshop-scraper-landingzone/jumbo/'
+FILE_FORMAT = (
+    TYPE = 'JSON',
+    COMPRESSION = 'GZIP'
+);
+
+list @jumbo_webshop_raw_products;
+
+drop table stage_jumbo_webshop_products;
+create table stage_jumbo_webshop_products (filename string, file_content variant);
+
+create warehouse wh_xsmall WAREHOUSE_SIZE = XSMALL;
+use warehouse wh_xsmall;
+
+create file format my_json_format
+type = JSON
+compression = GZIP
+strip_outer_array = true;
+
+copy into stage_jumbo_webshop_products (filename, file_content)
+  from (select metadata$filename, * from '@jumbo_webshop_raw_products/products/' (file_format => my_json_format))
+  on_error = 'skip_file';
+  
+  
+select * from stage_jumbo_webshop_products;
+
+
+select  
+  product.value:id::string as PRODUCT_ID,
+  product.value:title::string as PRODUCT_TITLE,
+  product.value:available::boolean as AVAILABLE,
+  product.value:productType::string as PRODUCT_TYPE,
+  product.value:nixProduct::string as NIX_PRODUCT,  
+  product.value:sample::boolean as "SAMPLE",  
+  product.value:quantity::string as QUANTITY,  
+  
+  product.value:prices:price:amount::int as PRICE_AMOUNT,  
+  
+  product.value:prices:unitPrice:unit::string as UNIT,  
+  product.value:prices:unitPrice:price:amount::decimal as UNIT_PRICE_AMOUNT,  
+  
+  product.value:promotion:id::string as PROMOTION_ID,
+  product.value:promotion:name::string as PROMOTION_NAME,
+  product.value:promotion:fromDate::timestamp as PROMOTION_FROM_DATE,
+  product.value:promotion:toDate::timestamp as PROMOTION_TO_DATE,
+  product.value:promotion:validityPeriod::string as PROMOTION_VALIDITY_PERIOD,
+  substring(filename,charindex('response - ', filename) + 11, 19) as FILE_CREATED_AT,
+  'JUMBO' as RECORD_SOURCE  
+  from
+    stage_jumbo_webshop_products    
+    , lateral flatten(input => file_content) request
+    , lateral flatten(input => request.value:products:data) product;    
+    

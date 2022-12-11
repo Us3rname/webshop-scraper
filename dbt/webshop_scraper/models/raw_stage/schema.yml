@@ -1,0 +1,17 @@
+
+version: 2
+
+models:
+  - name: raw_products_jumbo
+    description: "Presents the raw json data in the table"
+    columns:
+      - name: file_content
+        data_type: variant
+        description: "The primary key for this table"
+        tests:          
+          - not_null
+      - name: file_created_at
+        data_type: datetime
+        description: "The date when the file is generated on S3"
+        tests:          
+          - not_null
