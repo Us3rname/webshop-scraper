@@ -4,8 +4,8 @@
 
 {%- set source_model = "v_stg_products_jumbo" -%}
 
-{%- set src_pk = "PRODUCT_PK" -%}
-{%- set src_nk = ["PRODUCT_ID", "SOURCE_SYSTEM"] -%}
+{%- set src_pk = "PROMOTION_PK" -%}
+{%- set src_nk = ["PROMOTION_ID", "SOURCE_SYSTEM"] -%}
 {%- set src_source = "RECORD_SOURCE" -%}
 {%- set src_ldts = "LOAD_DATE" -%}
 

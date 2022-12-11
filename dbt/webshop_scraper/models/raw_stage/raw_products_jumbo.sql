@@ -14,8 +14,8 @@ select
   product.value:promotion:fromDate::timestamp as PROMOTION_FROM_DATE,
   product.value:promotion:toDate::timestamp as PROMOTION_TO_DATE,
   product.value:promotion:validityPeriod::string as PROMOTION_VALIDITY_PERIOD,
-  substring(filename,charindex('response - ', filename) + 11, 19) as FILE_CREATED_AT,
-  'JUMBO' as RECORD_SOURCE  
+  to_timestamp(substring(filename,charindex('response - ', filename) + 11, 19)) as FILE_CREATED_AT,
+  'JUMBO' as SOURCE_SYSTEM  
   from    
     {{ source('webshop_scraper', 'stage_jumbo_webshop_products') }}
     , lateral flatten(input => file_content) request

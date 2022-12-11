@@ -22,7 +22,7 @@ FILE_FORMAT = (
 
 list @jumbo_webshop_raw_products;
 
-drop table raw_stage_jumbo_webshop_products;
+drop table stage_jumbo_webshop_products;
 create table stage_jumbo_webshop_products (filename string, file_content variant);
 
 create warehouse wh_xsmall WAREHOUSE_SIZE = XSMALL;
@@ -30,10 +30,11 @@ use warehouse wh_xsmall;
 
 create file format my_json_format
 type = JSON
-compression = GZIP;
+compression = GZIP
+strip_outer_array = true;
 
 copy into stage_jumbo_webshop_products (filename, file_content)
-  from (select metadata$filename, * from '@jumbo_webshop_raw_products/products/dt=2022-10-30/response - 2022-10-30 18:52:16.json.gz' (file_format => my_json_format))
+  from (select metadata$filename, * from '@jumbo_webshop_raw_products/products/' (file_format => my_json_format))
   on_error = 'skip_file';
   
   

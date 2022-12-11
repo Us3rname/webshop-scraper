@@ -1,30 +1,41 @@
-{{ config(materialized='view')}}
-
 {%- set yaml_metadata -%}
 source_model: 'raw_products_jumbo'
 
 derived_columns:
-  RECORD_SOURCE: 'RECORD_SOURCE'  
-  LOAD_DATE: 'FILE_CREATED_AT'
+  RECORD_SOURCE: 'SOURCE_SYSTEM'  
   EFFECTIVE_FROM: 'FILE_CREATED_AT'
+  LOAD_DATE: 'FILE_CREATED_AT'
 
 hashed_columns:
   PRODUCT_PK:
     - 'PRODUCT_ID'
-    - 'RECORD_SOURCE'  
+    - 'SOURCE_SYSTEM'  
   PROMOTION_PK:
     - 'PROMOTION_ID'
-    - 'RECORD_SOURCE'    
-  PRODUCT_HASHDIFF:
+    - 'SOURCE_SYSTEM'    
+  PRODUCT_DETAILS_HASHDIFF:
     is_hashdiff: true
     columns:
       - 'PRODUCT_ID'
-      - 'RECORD_SOURCE'
+      - 'SOURCE_SYSTEM'  
+      - 'PRODUCT_TITLE'
+  PRODUCT_PRICE_HASHDIFF:
+    is_hashdiff: true
+    columns:
+      - 'PRODUCT_ID'
+      - 'SOURCE_SYSTEM'  
+      - 'PRICE_AMOUNT'
+      - 'UNIT'
+      - 'UNIT_PRICE_AMOUNT'      
   PROMOTION_HASHDIFF:
     is_hashdiff: true
     columns:
       - 'PROMOTION_ID'
-      - 'RECORD_SOURCE'
+      - 'PROMOTION_NAME'
+      - 'PROMOTION_FROM_DATE'
+      - 'PROMOTION_TO_DATE'
+      - 'PROMOTION_VALIDITY_PERIOD'
+      - 'SOURCE_SYSTEM'
 
 {%- endset -%}
 

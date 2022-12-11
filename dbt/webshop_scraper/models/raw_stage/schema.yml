@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: raw_jumbo_model
+  - name: raw_products_jumbo
     description: "Presents the raw json data in the table"
     columns:
       - name: file_content
